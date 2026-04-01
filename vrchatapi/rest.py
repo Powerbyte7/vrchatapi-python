@@ -245,10 +245,10 @@ class RESTClientObject(object):
 
             raise ApiException(http_resp=r)
 
-        if re.match(b'{"\w{21}":\["totp","otp"]}', r.data) is not None:
+        if re.match(rb'{"\w{21}":\["totp","otp"]}', r.data) is not None:
             r.reason = "2 Factor Authentication verification is required"
             raise UnauthorizedException(http_resp=r)
-        elif re.match(b'{"\w{21}":\["emailOtp"]}', r.data) is not None:
+        elif re.match(rb'{"\w{21}":\["emailOtp"]}', r.data) is not None:
             r.reason = "Email 2 Factor Authentication verification is required"
             raise UnauthorizedException(http_resp=r)
 
