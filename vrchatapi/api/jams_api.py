@@ -36,6 +36,156 @@ class JamsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def delete_jam_submission(self, jam_id, jam_submission_id, **kwargs):  # noqa: E501
+        """Delete Jam Submission  # noqa: E501
+
+        Withdraws a content submission from a jam.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_jam_submission(jam_id, jam_submission_id, async_req=True)
+        >>> result = thread.get()
+
+        :param jam_id: Must be a valid jam ID. (required)
+        :type jam_id: str
+        :param jam_submission_id: Must be a valid jam submission ID. (required)
+        :type jam_submission_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: Success
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.delete_jam_submission_with_http_info(jam_id, jam_submission_id, **kwargs)  # noqa: E501
+
+    def delete_jam_submission_with_http_info(self, jam_id, jam_submission_id, **kwargs):  # noqa: E501
+        """Delete Jam Submission  # noqa: E501
+
+        Withdraws a content submission from a jam.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_jam_submission_with_http_info(jam_id, jam_submission_id, async_req=True)
+        >>> result = thread.get()
+
+        :param jam_id: Must be a valid jam ID. (required)
+        :type jam_id: str
+        :param jam_submission_id: Must be a valid jam submission ID. (required)
+        :type jam_submission_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(Success, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'jam_id',
+            'jam_submission_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_jam_submission" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'jam_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('jam_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `jam_id` when calling `delete_jam_submission`")  # noqa: E501
+        # verify the required parameter 'jam_submission_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('jam_submission_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `jam_submission_id` when calling `delete_jam_submission`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'jam_id' in local_var_params:
+            path_params['jamId'] = local_var_params['jam_id']  # noqa: E501
+        if 'jam_submission_id' in local_var_params:
+            path_params['jamSubmissionId'] = local_var_params['jam_submission_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "Success",
+            401: "Error",
+            403: "Error",
+            404: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/jams/{jamId}/submissions/{jamSubmissionId}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
     def get_jam(self, jam_id, **kwargs):  # noqa: E501
         """Show jam information  # noqa: E501
 
@@ -46,7 +196,7 @@ class JamsApi(object):
         >>> thread = api.get_jam(jam_id, async_req=True)
         >>> result = thread.get()
 
-        :param jam_id: Must be a valid query ID. (required)
+        :param jam_id: Must be a valid jam ID. (required)
         :type jam_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -76,7 +226,7 @@ class JamsApi(object):
         >>> thread = api.get_jam_with_http_info(jam_id, async_req=True)
         >>> result = thread.get()
 
-        :param jam_id: Must be a valid query ID. (required)
+        :param jam_id: Must be a valid jam ID. (required)
         :type jam_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -177,15 +327,19 @@ class JamsApi(object):
     def get_jam_submissions(self, jam_id, **kwargs):  # noqa: E501
         """Show jam submissions  # noqa: E501
 
-        Returns all submissions of a jam.  # noqa: E501
+        Returns all submissions of a jam. Can filter by contentId (for world or avatar jams) or submitterId (for a participant).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_jam_submissions(jam_id, async_req=True)
         >>> result = thread.get()
 
-        :param jam_id: Must be a valid query ID. (required)
+        :param jam_id: Must be a valid jam ID. (required)
         :type jam_id: str
+        :param content_id: Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc.
+        :type content_id: str
+        :param submitter_id: Must be a valid user ID.
+        :type submitter_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -199,7 +353,7 @@ class JamsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: list[Submission]
+        :rtype: list[JamSubmission]
         """
         kwargs['_return_http_data_only'] = True
         return self.get_jam_submissions_with_http_info(jam_id, **kwargs)  # noqa: E501
@@ -207,15 +361,19 @@ class JamsApi(object):
     def get_jam_submissions_with_http_info(self, jam_id, **kwargs):  # noqa: E501
         """Show jam submissions  # noqa: E501
 
-        Returns all submissions of a jam.  # noqa: E501
+        Returns all submissions of a jam. Can filter by contentId (for world or avatar jams) or submitterId (for a participant).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_jam_submissions_with_http_info(jam_id, async_req=True)
         >>> result = thread.get()
 
-        :param jam_id: Must be a valid query ID. (required)
+        :param jam_id: Must be a valid jam ID. (required)
         :type jam_id: str
+        :param content_id: Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc.
+        :type content_id: str
+        :param submitter_id: Must be a valid user ID.
+        :type submitter_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -237,13 +395,15 @@ class JamsApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(list[Submission], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[JamSubmission], status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
         all_params = [
-            'jam_id'
+            'jam_id',
+            'content_id',
+            'submitter_id'
         ]
         all_params.extend(
             [
@@ -276,6 +436,10 @@ class JamsApi(object):
             path_params['jamId'] = local_var_params['jam_id']  # noqa: E501
 
         query_params = []
+        if local_var_params.get('content_id') is not None:  # noqa: E501
+            query_params.append(('contentId', local_var_params['content_id']))  # noqa: E501
+        if local_var_params.get('submitter_id') is not None:  # noqa: E501
+            query_params.append(('submitterId', local_var_params['submitter_id']))  # noqa: E501
 
         header_params = dict(local_var_params.get('_headers', {}))
 
@@ -291,7 +455,7 @@ class JamsApi(object):
         auth_settings = ['authCookie']  # noqa: E501
 
         response_types_map = {
-            200: "list[Submission]",
+            200: "list[JamSubmission]",
             404: "Error",
         }
 
@@ -431,6 +595,160 @@ class JamsApi(object):
 
         return self.api_client.call_api(
             '/jams', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def submit_jam_content(self, jam_id, **kwargs):  # noqa: E501
+        """Submit Jam Content  # noqa: E501
+
+        Submits content to a jam. The content must have been uploaded by the submitter, and both the content upload and jam submission must be made within the jam's designated times.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.submit_jam_content(jam_id, async_req=True)
+        >>> result = thread.get()
+
+        :param jam_id: Must be a valid jam ID. (required)
+        :type jam_id: str
+        :param create_jam_submission_request:
+        :type create_jam_submission_request: CreateJamSubmissionRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: JamSubmission
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.submit_jam_content_with_http_info(jam_id, **kwargs)  # noqa: E501
+
+    def submit_jam_content_with_http_info(self, jam_id, **kwargs):  # noqa: E501
+        """Submit Jam Content  # noqa: E501
+
+        Submits content to a jam. The content must have been uploaded by the submitter, and both the content upload and jam submission must be made within the jam's designated times.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.submit_jam_content_with_http_info(jam_id, async_req=True)
+        >>> result = thread.get()
+
+        :param jam_id: Must be a valid jam ID. (required)
+        :type jam_id: str
+        :param create_jam_submission_request:
+        :type create_jam_submission_request: CreateJamSubmissionRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(JamSubmission, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'jam_id',
+            'create_jam_submission_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method submit_jam_content" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'jam_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('jam_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `jam_id` when calling `submit_jam_content`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'jam_id' in local_var_params:
+            path_params['jamId'] = local_var_params['jam_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_jam_submission_request' in local_var_params:
+            body_params = local_var_params['create_jam_submission_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "JamSubmission",
+            401: "Error",
+            404: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/jams/{jamId}/submissions', 'POST',
             path_params,
             query_params,
             header_params,

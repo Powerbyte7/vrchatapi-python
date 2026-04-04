@@ -137,7 +137,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 create_file_version_request = vrchatapi.CreateFileVersionRequest() # CreateFileVersionRequest |  (optional)
 
     try:
@@ -212,7 +212,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 
     try:
         # Delete File
@@ -286,7 +286,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 version_id = 1 # int | Version ID of the asset.
 
     try:
@@ -363,7 +363,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 version_id = 1 # int | Version ID of the asset.
 
     try:
@@ -439,7 +439,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 version_id = 1 # int | Version ID of the asset.
 file_type = 'file' # str | Type of file.
 finish_file_data_upload_request = {"etags":["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"],"maxParts":"0","nextPartNumber":"0"} # FinishFileDataUploadRequest | Please see documentation on ETag's: [https://teppen.io/2018/06/23/aws_s3_etags/](https://teppen.io/2018/06/23/aws_s3_etags/)  ETag's should NOT be present when uploading a `signature`. (optional)
@@ -669,7 +669,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 
     try:
         # Show File
@@ -743,7 +743,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 version_id = 1 # int | Version ID of the asset.
 
     try:
@@ -820,7 +820,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 version_id = 1 # int | Version ID of the asset.
 
     try:
@@ -897,7 +897,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 version_id = 1 # int | Version ID of the asset.
 
     try:
@@ -974,7 +974,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 version_id = 1 # int | Version ID of the asset.
 file_type = 'file' # str | Type of file.
 
@@ -1204,7 +1204,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FilesApi(api_client)
-    file_id = 'file_00000000-0000-0000-0000-000000000000' # str | Must be a valid file ID.
+    file_id = 'file_id_example' # str | Must be a valid file ID.
 version_id = 1 # int | Version ID of the asset.
 file_type = 'file' # str | Type of file.
 part_number = 1 # int | The part number to start uploading. If not provided, the first part will be started. (optional)

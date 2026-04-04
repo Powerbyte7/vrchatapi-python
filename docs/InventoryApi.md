@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_inventory_template**](InventoryApi.md#get_inventory_template) | **GET** /inventory/template/{inventoryTemplateId} | Get Inventory Template
 [**get_own_inventory_item**](InventoryApi.md#get_own_inventory_item) | **GET** /inventory/{inventoryItemId} | Get Own Inventory Item
 [**get_user_inventory_item**](InventoryApi.md#get_user_inventory_item) | **GET** /user/{userId}/inventory/{inventoryItemId} | Get User Inventory Item
+[**redeem_reward**](InventoryApi.md#redeem_reward) | **POST** /reward/redeem | Redeem Reward
 [**share_inventory_item_direct**](InventoryApi.md#share_inventory_item_direct) | **POST** /inventory/cloning/direct | Share Inventory Item Direct
 [**share_inventory_item_pedestal**](InventoryApi.md#share_inventory_item_pedestal) | **GET** /inventory/cloning/pedestal | Share Inventory Item by Pedestal
 [**spawn_inventory_item**](InventoryApi.md#spawn_inventory_item) | **GET** /inventory/spawn | Spawn Inventory Item
@@ -57,7 +58,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.InventoryApi(api_client)
-    inventory_item_id = 'inv_00000000-0000-0000-0000-000000000000' # str | Must be a valid inventory item ID.
+    inventory_item_id = 'inventory_item_id_example' # str | Must be a valid inventory item ID.
 
     try:
         # Consume Own Inventory Item
@@ -132,7 +133,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.InventoryApi(api_client)
-    inventory_item_id = 'inv_00000000-0000-0000-0000-000000000000' # str | Must be a valid inventory item ID.
+    inventory_item_id = 'inventory_item_id_example' # str | Must be a valid inventory item ID.
 
     try:
         # Delete Own Inventory Item
@@ -206,7 +207,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.InventoryApi(api_client)
-    inventory_item_id = 'inv_00000000-0000-0000-0000-000000000000' # str | Must be a valid inventory item ID.
+    inventory_item_id = 'inventory_item_id_example' # str | Must be a valid inventory item ID.
 equip_inventory_item_request = vrchatapi.EquipInventoryItemRequest() # EquipInventoryItemRequest |  (optional)
 
     try:
@@ -522,7 +523,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.InventoryApi(api_client)
-    inventory_template_id = 'invt_00000000-0000-0000-0000-000000000000' # str | Must be a valid inventory template ID.
+    inventory_template_id = 'inventory_template_id_example' # str | Must be a valid inventory template ID.
 
     try:
         # Get Inventory Template
@@ -596,7 +597,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.InventoryApi(api_client)
-    inventory_item_id = 'inv_00000000-0000-0000-0000-000000000000' # str | Must be a valid inventory item ID.
+    inventory_item_id = 'inventory_item_id_example' # str | Must be a valid inventory item ID.
 
     try:
         # Get Own Inventory Item
@@ -671,7 +672,7 @@ with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.InventoryApi(api_client)
     user_id = 'user_id_example' # str | Must be a valid user ID.
-inventory_item_id = 'inv_00000000-0000-0000-0000-000000000000' # str | Must be a valid inventory item ID.
+inventory_item_id = 'inventory_item_id_example' # str | Must be a valid inventory item ID.
 
     try:
         # Get User Inventory Item
@@ -705,6 +706,80 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Returns an InventoryItem object. |  -  |
+**401** | Error response due to missing auth cookie. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **redeem_reward**
+> list[RewardRedemptionResult] redeem_reward(reward_redemption_request)
+
+Redeem Reward
+
+Redeem a reward for the currently logged in user.
+
+### Example
+
+* Api Key Authentication (authCookie):
+```python
+from __future__ import print_function
+import time
+import vrchatapi
+from vrchatapi.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.vrchat.cloud/api/1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vrchatapi.Configuration(
+    host = "https://api.vrchat.cloud/api/1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: authCookie
+configuration.api_key['authCookie'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authCookie'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vrchatapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vrchatapi.InventoryApi(api_client)
+    reward_redemption_request = vrchatapi.RewardRedemptionRequest() # RewardRedemptionRequest | 
+
+    try:
+        # Redeem Reward
+        api_response = api_instance.redeem_reward(reward_redemption_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling InventoryApi->redeem_reward: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **reward_redemption_request** | [**RewardRedemptionRequest**](RewardRedemptionRequest.md)|  | 
+
+### Return type
+
+[**list[RewardRedemptionResult]**](RewardRedemptionResult.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a single RewardRedemptionResult object. |  -  |
 **401** | Error response due to missing auth cookie. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1048,7 +1123,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.InventoryApi(api_client)
-    inventory_item_id = 'inv_00000000-0000-0000-0000-000000000000' # str | Must be a valid inventory item ID.
+    inventory_item_id = 'inventory_item_id_example' # str | Must be a valid inventory item ID.
 update_inventory_item_request = vrchatapi.UpdateInventoryItemRequest() # UpdateInventoryItemRequest |  (optional)
 
     try:

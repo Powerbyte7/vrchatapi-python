@@ -126,8 +126,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FavoritesApi(api_client)
-    favorite_group_type = 'favorite_group_type_example' # str | The type of group to fetch, must be a valid FavoriteType.
-favorite_group_name = 'favorite_group_name_example' # str | The name of the group to fetch, must be a name of a FavoriteGroup.
+    favorite_group_type = vrchatapi.FavoriteType() # FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+favorite_group_name = 'group_0' # str | The name of the group to fetch, must be a name of a FavoriteGroup. (default to 'group_0')
 user_id = 'user_id_example' # str | Must be a valid user ID.
 
     try:
@@ -142,8 +142,8 @@ user_id = 'user_id_example' # str | Must be a valid user ID.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **favorite_group_type** | **str**| The type of group to fetch, must be a valid FavoriteType. | 
- **favorite_group_name** | **str**| The name of the group to fetch, must be a name of a FavoriteGroup. | 
+ **favorite_group_type** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | 
+ **favorite_group_name** | **str**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to &#39;group_0&#39;]
  **user_id** | **str**| Must be a valid user ID. | 
 
 ### Return type
@@ -203,8 +203,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FavoritesApi(api_client)
-    favorite_group_type = 'favorite_group_type_example' # str | The type of group to fetch, must be a valid FavoriteType.
-favorite_group_name = 'favorite_group_name_example' # str | The name of the group to fetch, must be a name of a FavoriteGroup.
+    favorite_group_type = vrchatapi.FavoriteType() # FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+favorite_group_name = 'group_0' # str | The name of the group to fetch, must be a name of a FavoriteGroup. (default to 'group_0')
 user_id = 'user_id_example' # str | Must be a valid user ID.
 
     try:
@@ -219,8 +219,8 @@ user_id = 'user_id_example' # str | Must be a valid user ID.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **favorite_group_type** | **str**| The type of group to fetch, must be a valid FavoriteType. | 
- **favorite_group_name** | **str**| The name of the group to fetch, must be a name of a FavoriteGroup. | 
+ **favorite_group_type** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | 
+ **favorite_group_name** | **str**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to &#39;group_0&#39;]
  **user_id** | **str**| Must be a valid user ID. | 
 
 ### Return type
@@ -585,8 +585,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.FavoritesApi(api_client)
-    favorite_group_type = 'favorite_group_type_example' # str | The type of group to fetch, must be a valid FavoriteType.
-favorite_group_name = 'favorite_group_name_example' # str | The name of the group to fetch, must be a name of a FavoriteGroup.
+    favorite_group_type = vrchatapi.FavoriteType() # FavoriteType | The type of group to fetch, must be a valid FavoriteType.
+favorite_group_name = 'group_0' # str | The name of the group to fetch, must be a name of a FavoriteGroup. (default to 'group_0')
 user_id = 'user_id_example' # str | Must be a valid user ID.
 update_favorite_group_request = vrchatapi.UpdateFavoriteGroupRequest() # UpdateFavoriteGroupRequest |  (optional)
 
@@ -601,8 +601,8 @@ update_favorite_group_request = vrchatapi.UpdateFavoriteGroupRequest() # UpdateF
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **favorite_group_type** | **str**| The type of group to fetch, must be a valid FavoriteType. | 
- **favorite_group_name** | **str**| The name of the group to fetch, must be a name of a FavoriteGroup. | 
+ **favorite_group_type** | [**FavoriteType**](.md)| The type of group to fetch, must be a valid FavoriteType. | 
+ **favorite_group_name** | **str**| The name of the group to fetch, must be a name of a FavoriteGroup. | [default to &#39;group_0&#39;]
  **user_id** | **str**| Must be a valid user ID. | 
  **update_favorite_group_request** | [**UpdateFavoriteGroupRequest**](UpdateFavoriteGroupRequest.md)|  | [optional] 
 

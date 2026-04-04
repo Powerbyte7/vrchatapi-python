@@ -1781,8 +1781,8 @@ class UsersApi(object):
 
         :param user_id: Must be a valid user ID. (required)
         :type user_id: str
-        :param content_id: Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc.
-        :type content_id: bool
+        :param content_id: Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc.
+        :type content_id: str
         :param n: The number of objects to return.
         :type n: int
         :param offset: A zero-based offset from the default object sorting from where search results start.
@@ -1817,8 +1817,8 @@ class UsersApi(object):
 
         :param user_id: Must be a valid user ID. (required)
         :type user_id: str
-        :param content_id: Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc.
-        :type content_id: bool
+        :param content_id: Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc.
+        :type content_id: str
         :param n: The number of objects to return.
         :type n: int
         :param offset: A zero-based offset from the default object sorting from where search results start.
@@ -2907,6 +2907,144 @@ class UsersApi(object):
 
         return self.api_client.call_api(
             '/users/{userId}/groups/represented', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def get_user_tutorial_status(self, user_id, **kwargs):  # noqa: E501
+        """Get User Tutorial Status  # noqa: E501
+
+        Gets the status of completed or outstanding tutorials for the specified user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_user_tutorial_status(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: TutorialStatus
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_user_tutorial_status_with_http_info(user_id, **kwargs)  # noqa: E501
+
+    def get_user_tutorial_status_with_http_info(self, user_id, **kwargs):  # noqa: E501
+        """Get User Tutorial Status  # noqa: E501
+
+        Gets the status of completed or outstanding tutorials for the specified user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_user_tutorial_status_with_http_info(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(TutorialStatus, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_tutorial_status" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'user_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('user_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `get_user_tutorial_status`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'user_id' in local_var_params:
+            path_params['userId'] = local_var_params['user_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "TutorialStatus",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/users/{userId}/tutorial', 'GET',
             path_params,
             query_params,
             header_params,

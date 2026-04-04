@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**get_user_note**](UsersApi.md#get_user_note) | **GET** /userNotes/{userNoteId} | Get User Note
 [**get_user_notes**](UsersApi.md#get_user_notes) | **GET** /userNotes | Get User Notes
 [**get_user_represented_group**](UsersApi.md#get_user_represented_group) | **GET** /users/{userId}/groups/represented | Get user&#39;s current represented group
+[**get_user_tutorial_status**](UsersApi.md#get_user_tutorial_status) | **GET** /users/{userId}/tutorial | Get User Tutorial Status
 [**remove_tags**](UsersApi.md#remove_tags) | **POST** /users/{userId}/removeTags | Remove User Tags
 [**search_users**](UsersApi.md#search_users) | **GET** /users | Search All Users
 [**update_badge**](UsersApi.md#update_badge) | **PUT** /users/{userId}/badges/{badgeId} | Update User Badge
@@ -973,7 +974,7 @@ with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.UsersApi(api_client)
     user_id = 'user_id_example' # str | Must be a valid user ID.
-content_id = True # bool | Filter for users' previously submitted feedback, e.g., a groupId, userId, avatarId, etc. (optional)
+content_id = 'content_id_example' # str | Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. (optional)
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
 
@@ -990,7 +991,7 @@ offset = 56 # int | A zero-based offset from the default object sorting from whe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**| Must be a valid user ID. | 
- **content_id** | **bool**| Filter for users&#39; previously submitted feedback, e.g., a groupId, userId, avatarId, etc. | [optional] 
+ **content_id** | **str**| Filter for particular content submitted, e.g., a groupId, userId, avatarId, etc. | [optional] 
  **n** | **int**| The number of objects to return. | [optional] [default to 60]
  **offset** | **int**| A zero-based offset from the default object sorting from where search results start. | [optional] 
 
@@ -1128,7 +1129,7 @@ with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.UsersApi(api_client)
     user_id = 'user_id_example' # str | Must be a valid user ID.
-group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Get User Group Instances for a specific Group
@@ -1535,6 +1536,80 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**401** | Error response due to missing auth cookie. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_tutorial_status**
+> TutorialStatus get_user_tutorial_status(user_id)
+
+Get User Tutorial Status
+
+Gets the status of completed or outstanding tutorials for the specified user.
+
+### Example
+
+* Api Key Authentication (authCookie):
+```python
+from __future__ import print_function
+import time
+import vrchatapi
+from vrchatapi.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.vrchat.cloud/api/1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vrchatapi.Configuration(
+    host = "https://api.vrchat.cloud/api/1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: authCookie
+configuration.api_key['authCookie'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authCookie'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vrchatapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vrchatapi.UsersApi(api_client)
+    user_id = 'user_id_example' # str | Must be a valid user ID.
+
+    try:
+        # Get User Tutorial Status
+        api_response = api_instance.get_user_tutorial_status(user_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsersApi->get_user_tutorial_status: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **str**| Must be a valid user ID. | 
+
+### Return type
+
+[**TutorialStatus**](TutorialStatus.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a single TutorialStatus object. |  -  |
 **401** | Error response due to missing auth cookie. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

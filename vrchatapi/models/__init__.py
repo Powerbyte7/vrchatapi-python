@@ -65,6 +65,7 @@ from vrchatapi.models.calendar_event_discovery_scope import CalendarEventDiscove
 from vrchatapi.models.calendar_event_platform import CalendarEventPlatform
 from vrchatapi.models.calendar_event_user_interest import CalendarEventUserInterest
 from vrchatapi.models.change_user_tags_request import ChangeUserTagsRequest
+from vrchatapi.models.change_world_tags_request import ChangeWorldTagsRequest
 from vrchatapi.models.content_filter import ContentFilter
 from vrchatapi.models.create_avatar_moderation_request import CreateAvatarModerationRequest
 from vrchatapi.models.create_avatar_request import CreateAvatarRequest
@@ -78,6 +79,7 @@ from vrchatapi.models.create_group_post_request import CreateGroupPostRequest
 from vrchatapi.models.create_group_request import CreateGroupRequest
 from vrchatapi.models.create_group_role_request import CreateGroupRoleRequest
 from vrchatapi.models.create_instance_request import CreateInstanceRequest
+from vrchatapi.models.create_jam_submission_request import CreateJamSubmissionRequest
 from vrchatapi.models.create_prop_request import CreatePropRequest
 from vrchatapi.models.create_world_request import CreateWorldRequest
 from vrchatapi.models.current_user import CurrentUser
@@ -88,6 +90,8 @@ from vrchatapi.models.developer_type import DeveloperType
 from vrchatapi.models.disable2_fa_result import Disable2FAResult
 from vrchatapi.models.discord_details import DiscordDetails
 from vrchatapi.models.dynamic_content_row import DynamicContentRow
+from vrchatapi.models.earnings_metrics import EarningsMetrics
+from vrchatapi.models.earnings_metrics_totals import EarningsMetricsTotals
 from vrchatapi.models.economy_account import EconomyAccount
 from vrchatapi.models.equip_inventory_item_request import EquipInventoryItemRequest
 from vrchatapi.models.error import Error
@@ -174,6 +178,7 @@ from vrchatapi.models.invite_request import InviteRequest
 from vrchatapi.models.invite_response import InviteResponse
 from vrchatapi.models.jam import Jam
 from vrchatapi.models.jam_state_change_dates import JamStateChangeDates
+from vrchatapi.models.jam_submission import JamSubmission
 from vrchatapi.models.join_group_request import JoinGroupRequest
 from vrchatapi.models.license import License
 from vrchatapi.models.license_action import LicenseAction
@@ -225,11 +230,15 @@ from vrchatapi.models.product_listing import ProductListing
 from vrchatapi.models.product_listing_type import ProductListingType
 from vrchatapi.models.product_listing_variant import ProductListingVariant
 from vrchatapi.models.product_purchase import ProductPurchase
+from vrchatapi.models.product_purchase_history import ProductPurchaseHistory
+from vrchatapi.models.product_purchase_location_type import ProductPurchaseLocationType
 from vrchatapi.models.product_purchase_purchase_context import ProductPurchasePurchaseContext
+from vrchatapi.models.product_purchase_record import ProductPurchaseRecord
 from vrchatapi.models.product_type import ProductType
 from vrchatapi.models.prop import Prop
 from vrchatapi.models.prop_publish_status import PropPublishStatus
 from vrchatapi.models.prop_unity_package import PropUnityPackage
+from vrchatapi.models.purchase_context_data import PurchaseContextData
 from vrchatapi.models.purchase_product_listing_request import PurchaseProductListingRequest
 from vrchatapi.models.region import Region
 from vrchatapi.models.register_user_account_request import RegisterUserAccountRequest
@@ -241,7 +250,13 @@ from vrchatapi.models.request_invite_request import RequestInviteRequest
 from vrchatapi.models.respond_group_join_request import RespondGroupJoinRequest
 from vrchatapi.models.respond_notification_v2_request import RespondNotificationV2Request
 from vrchatapi.models.response import Response
+from vrchatapi.models.reward_badge import RewardBadge
+from vrchatapi.models.reward_redemption import RewardRedemption
+from vrchatapi.models.reward_redemption_data import RewardRedemptionData
+from vrchatapi.models.reward_redemption_request import RewardRedemptionRequest
+from vrchatapi.models.reward_redemption_result import RewardRedemptionResult
 from vrchatapi.models.search_group_members200_response import SearchGroupMembers200Response
+from vrchatapi.models.seller_eligibility import SellerEligibility
 from vrchatapi.models.sent_notification import SentNotification
 from vrchatapi.models.service_queue_stats import ServiceQueueStats
 from vrchatapi.models.service_status import ServiceStatus
@@ -252,7 +267,6 @@ from vrchatapi.models.store import Store
 from vrchatapi.models.store_shelf import StoreShelf
 from vrchatapi.models.store_type import StoreType
 from vrchatapi.models.store_view import StoreView
-from vrchatapi.models.submission import Submission
 from vrchatapi.models.submit_moderation_report_request import SubmitModerationReportRequest
 from vrchatapi.models.submit_moderation_report_request_details import SubmitModerationReportRequestDetails
 from vrchatapi.models.subscription import Subscription
@@ -268,6 +282,7 @@ from vrchatapi.models.transaction_status import TransactionStatus
 from vrchatapi.models.transaction_steam_info import TransactionSteamInfo
 from vrchatapi.models.transaction_steam_wallet_info import TransactionSteamWalletInfo
 from vrchatapi.models.transfer_group_request import TransferGroupRequest
+from vrchatapi.models.tutorial_status import TutorialStatus
 from vrchatapi.models.two_factor_auth_code import TwoFactorAuthCode
 from vrchatapi.models.two_factor_email_code import TwoFactorEmailCode
 from vrchatapi.models.two_factor_recovery_codes import TwoFactorRecoveryCodes

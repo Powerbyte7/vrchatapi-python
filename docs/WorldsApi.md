@@ -4,11 +4,13 @@ All URIs are relative to *https://api.vrchat.cloud/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_world_tags**](WorldsApi.md#add_world_tags) | **POST** /worlds/{worldId}/addTags | Add World Tags
 [**check_user_persistence_exists**](WorldsApi.md#check_user_persistence_exists) | **GET** /users/{userId}/{worldId}/persist/exists | Check User Persistence Exists
 [**create_world**](WorldsApi.md#create_world) | **POST** /worlds | Create World
 [**delete_all_user_persistence_data**](WorldsApi.md#delete_all_user_persistence_data) | **DELETE** /users/{userId}/persist | Delete All User Persistence Data
 [**delete_user_persistence**](WorldsApi.md#delete_user_persistence) | **DELETE** /users/{userId}/{worldId}/persist | Delete User Persistence
 [**delete_world**](WorldsApi.md#delete_world) | **DELETE** /worlds/{worldId} | Delete World
+[**delete_world_platform**](WorldsApi.md#delete_world_platform) | **DELETE** /worlds/{worldId}/platform/{publishedPlatform} | Delete World Platform
 [**get_active_worlds**](WorldsApi.md#get_active_worlds) | **GET** /worlds/active | List Active Worlds
 [**get_favorited_worlds**](WorldsApi.md#get_favorited_worlds) | **GET** /worlds/favorites | List Favorited Worlds
 [**get_recent_worlds**](WorldsApi.md#get_recent_worlds) | **GET** /worlds/recent | List Recent Worlds
@@ -17,10 +19,88 @@ Method | HTTP request | Description
 [**get_world_metadata**](WorldsApi.md#get_world_metadata) | **GET** /worlds/{worldId}/metadata | Get World Metadata
 [**get_world_publish_status**](WorldsApi.md#get_world_publish_status) | **GET** /worlds/{worldId}/publish | Get World Publish Status
 [**publish_world**](WorldsApi.md#publish_world) | **PUT** /worlds/{worldId}/publish | Publish World
+[**remove_world_tags**](WorldsApi.md#remove_world_tags) | **POST** /worlds/{worldId}/removeTags | Remove World Tags
 [**search_worlds**](WorldsApi.md#search_worlds) | **GET** /worlds | Search All Worlds
 [**unpublish_world**](WorldsApi.md#unpublish_world) | **DELETE** /worlds/{worldId}/publish | Unpublish World
 [**update_world**](WorldsApi.md#update_world) | **PUT** /worlds/{worldId} | Update World
 
+
+# **add_world_tags**
+> World add_world_tags(world_id, change_world_tags_request)
+
+Add World Tags
+
+Adds tags to the world's profile
+
+### Example
+
+* Api Key Authentication (authCookie):
+```python
+from __future__ import print_function
+import time
+import vrchatapi
+from vrchatapi.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.vrchat.cloud/api/1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vrchatapi.Configuration(
+    host = "https://api.vrchat.cloud/api/1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: authCookie
+configuration.api_key['authCookie'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authCookie'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vrchatapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vrchatapi.WorldsApi(api_client)
+    world_id = 'world_id_example' # str | Must be a valid world ID.
+change_world_tags_request = vrchatapi.ChangeWorldTagsRequest() # ChangeWorldTagsRequest | 
+
+    try:
+        # Add World Tags
+        api_response = api_instance.add_world_tags(world_id, change_world_tags_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorldsApi->add_world_tags: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **world_id** | **str**| Must be a valid world ID. | 
+ **change_world_tags_request** | [**ChangeWorldTagsRequest**](ChangeWorldTagsRequest.md)|  | 
+
+### Return type
+
+[**World**](World.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a single World object. |  -  |
+**400** | Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. |  -  |
+**401** | Error response due to missing auth cookie. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **check_user_persistence_exists**
 > check_user_persistence_exists(user_id, world_id)
@@ -362,6 +442,82 @@ with vrchatapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **world_id** | **str**| Must be a valid world ID. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Error response due to missing auth cookie. |  -  |
+**404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_world_platform**
+> delete_world_platform(world_id, published_platform)
+
+Delete World Platform
+
+Deletes a world platform.
+
+### Example
+
+* Api Key Authentication (authCookie):
+```python
+from __future__ import print_function
+import time
+import vrchatapi
+from vrchatapi.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.vrchat.cloud/api/1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vrchatapi.Configuration(
+    host = "https://api.vrchat.cloud/api/1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: authCookie
+configuration.api_key['authCookie'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authCookie'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vrchatapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vrchatapi.WorldsApi(api_client)
+    world_id = 'world_id_example' # str | Must be a valid world ID.
+published_platform = 'published_platform_example' # str | A platform the world supports.
+
+    try:
+        # Delete World Platform
+        api_instance.delete_world_platform(world_id, published_platform)
+    except ApiException as e:
+        print("Exception when calling WorldsApi->delete_world_platform: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **world_id** | **str**| Must be a valid world ID. | 
+ **published_platform** | **str**| A platform the world supports. | 
 
 ### Return type
 
@@ -1029,6 +1185,83 @@ void (empty response body)
 **200** | TODO |  -  |
 **401** | Error response due to missing auth cookie. |  -  |
 **404** | Error response when trying to show information about a non-existent world. Sometimes returns with &#x60;model &lt;worldId&gt; not found&#x60; instead of &#x60;World &lt;worldId not found&#x60;. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **remove_world_tags**
+> World remove_world_tags(world_id, change_world_tags_request)
+
+Remove World Tags
+
+Removes tags from the world's profile
+
+### Example
+
+* Api Key Authentication (authCookie):
+```python
+from __future__ import print_function
+import time
+import vrchatapi
+from vrchatapi.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.vrchat.cloud/api/1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = vrchatapi.Configuration(
+    host = "https://api.vrchat.cloud/api/1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: authCookie
+configuration.api_key['authCookie'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authCookie'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with vrchatapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = vrchatapi.WorldsApi(api_client)
+    world_id = 'world_id_example' # str | Must be a valid world ID.
+change_world_tags_request = vrchatapi.ChangeWorldTagsRequest() # ChangeWorldTagsRequest | 
+
+    try:
+        # Remove World Tags
+        api_response = api_instance.remove_world_tags(world_id, change_world_tags_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorldsApi->remove_world_tags: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **world_id** | **str**| Must be a valid world ID. | 
+ **change_world_tags_request** | [**ChangeWorldTagsRequest**](ChangeWorldTagsRequest.md)|  | 
+
+### Return type
+
+[**World**](World.md)
+
+### Authorization
+
+[authCookie](../README.md#authCookie)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Returns a single World object. |  -  |
+**400** | Error response when a world owner attempts to add an invalid, restricted, or duplicate tag to a world&#39;s profile, attempts to add tags above the limit for its profile, or attempts to remove invalid, restricted, or absent tag from its profile. |  -  |
+**401** | Error response due to missing auth cookie. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

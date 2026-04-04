@@ -36,31 +36,72 @@ class PurchaseProductListingRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'context_data': 'PurchaseContextData',
         'listing_id': 'str',
+        'listing_variant_id': 'str',
         'quantity': 'int',
+        'receiver_id': 'str',
+        'stackable': 'bool',
         'total_price': 'int'
     }
 
     attribute_map = {
+        'context_data': 'contextData',
         'listing_id': 'listingId',
+        'listing_variant_id': 'listingVariantId',
         'quantity': 'quantity',
+        'receiver_id': 'receiverId',
+        'stackable': 'stackable',
         'total_price': 'totalPrice'
     }
 
-    def __init__(self, listing_id=None, quantity=1, total_price=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, context_data=None, listing_id=None, listing_variant_id=None, quantity=1, receiver_id=None, stackable=None, total_price=None, local_vars_configuration=None):  # noqa: E501
         """PurchaseProductListingRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._context_data = None
         self._listing_id = None
+        self._listing_variant_id = None
         self._quantity = None
+        self._receiver_id = None
+        self._stackable = None
         self._total_price = None
         self.discriminator = None
 
+        if context_data is not None:
+            self.context_data = context_data
         self.listing_id = listing_id
+        if listing_variant_id is not None:
+            self.listing_variant_id = listing_variant_id
         self.quantity = quantity
+        if receiver_id is not None:
+            self.receiver_id = receiver_id
+        if stackable is not None:
+            self.stackable = stackable
         self.total_price = total_price
+
+    @property
+    def context_data(self):
+        """Gets the context_data of this PurchaseProductListingRequest.  # noqa: E501
+
+
+        :return: The context_data of this PurchaseProductListingRequest.  # noqa: E501
+        :rtype: PurchaseContextData
+        """
+        return self._context_data
+
+    @context_data.setter
+    def context_data(self, context_data):
+        """Sets the context_data of this PurchaseProductListingRequest.
+
+
+        :param context_data: The context_data of this PurchaseProductListingRequest.  # noqa: E501
+        :type context_data: PurchaseContextData
+        """
+
+        self._context_data = context_data
 
     @property
     def listing_id(self):
@@ -84,6 +125,27 @@ class PurchaseProductListingRequest(object):
             raise ValueError("Invalid value for `listing_id`, must not be `None`")  # noqa: E501
 
         self._listing_id = listing_id
+
+    @property
+    def listing_variant_id(self):
+        """Gets the listing_variant_id of this PurchaseProductListingRequest.  # noqa: E501
+
+
+        :return: The listing_variant_id of this PurchaseProductListingRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._listing_variant_id
+
+    @listing_variant_id.setter
+    def listing_variant_id(self, listing_variant_id):
+        """Sets the listing_variant_id of this PurchaseProductListingRequest.
+
+
+        :param listing_variant_id: The listing_variant_id of this PurchaseProductListingRequest.  # noqa: E501
+        :type listing_variant_id: str
+        """
+
+        self._listing_variant_id = listing_variant_id
 
     @property
     def quantity(self):
@@ -113,6 +175,50 @@ class PurchaseProductListingRequest(object):
             raise ValueError("Invalid value for `quantity`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._quantity = quantity
+
+    @property
+    def receiver_id(self):
+        """Gets the receiver_id of this PurchaseProductListingRequest.  # noqa: E501
+
+        A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.  # noqa: E501
+
+        :return: The receiver_id of this PurchaseProductListingRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._receiver_id
+
+    @receiver_id.setter
+    def receiver_id(self, receiver_id):
+        """Sets the receiver_id of this PurchaseProductListingRequest.
+
+        A users unique ID, usually in the form of `usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469`. Legacy players can have old IDs in the form of `8JoV9XEdpo`. The ID can never be changed.  # noqa: E501
+
+        :param receiver_id: The receiver_id of this PurchaseProductListingRequest.  # noqa: E501
+        :type receiver_id: str
+        """
+
+        self._receiver_id = receiver_id
+
+    @property
+    def stackable(self):
+        """Gets the stackable of this PurchaseProductListingRequest.  # noqa: E501
+
+
+        :return: The stackable of this PurchaseProductListingRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._stackable
+
+    @stackable.setter
+    def stackable(self, stackable):
+        """Sets the stackable of this PurchaseProductListingRequest.
+
+
+        :param stackable: The stackable of this PurchaseProductListingRequest.  # noqa: E501
+        :type stackable: bool
+        """
+
+        self._stackable = stackable
 
     @property
     def total_price(self):

@@ -126,7 +126,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.PropsApi(api_client)
-    prop_id = 'prop_829ba6f6-b837-49d9-b9a9-056b82103b58' # str | Prop ID.
+    prop_id = 'prop_id_example' # str | Prop ID.
 
     try:
         # Delete Prop
@@ -201,7 +201,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.PropsApi(api_client)
-    prop_id = 'prop_829ba6f6-b837-49d9-b9a9-056b82103b58' # str | Prop ID.
+    prop_id = 'prop_id_example' # str | Prop ID.
 
     try:
         # Get Prop
@@ -276,7 +276,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.PropsApi(api_client)
-    prop_id = 'prop_829ba6f6-b837-49d9-b9a9-056b82103b58' # str | Prop ID.
+    prop_id = 'prop_id_example' # str | Prop ID.
 
     try:
         # Get Prop Publish Status
@@ -431,7 +431,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.PropsApi(api_client)
-    prop_id = 'prop_829ba6f6-b837-49d9-b9a9-056b82103b58' # str | Prop ID.
+    prop_id = 'prop_id_example' # str | Prop ID.
 
     try:
         # Publish Prop
@@ -507,7 +507,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.PropsApi(api_client)
-    prop_id = 'prop_829ba6f6-b837-49d9-b9a9-056b82103b58' # str | Prop ID.
+    prop_id = 'prop_id_example' # str | Prop ID.
 
     try:
         # Unpublish Prop
@@ -583,7 +583,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.PropsApi(api_client)
-    prop_id = 'prop_829ba6f6-b837-49d9-b9a9-056b82103b58' # str | Prop ID.
+    prop_id = 'prop_id_example' # str | Prop ID.
 update_prop_request = vrchatapi.UpdatePropRequest() # UpdatePropRequest | 
 
     try:

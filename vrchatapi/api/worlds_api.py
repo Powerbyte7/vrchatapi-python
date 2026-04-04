@@ -36,6 +36,163 @@ class WorldsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def add_world_tags(self, world_id, change_world_tags_request, **kwargs):  # noqa: E501
+        """Add World Tags  # noqa: E501
+
+        Adds tags to the world's profile  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.add_world_tags(world_id, change_world_tags_request, async_req=True)
+        >>> result = thread.get()
+
+        :param world_id: Must be a valid world ID. (required)
+        :type world_id: str
+        :param change_world_tags_request: (required)
+        :type change_world_tags_request: ChangeWorldTagsRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: World
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.add_world_tags_with_http_info(world_id, change_world_tags_request, **kwargs)  # noqa: E501
+
+    def add_world_tags_with_http_info(self, world_id, change_world_tags_request, **kwargs):  # noqa: E501
+        """Add World Tags  # noqa: E501
+
+        Adds tags to the world's profile  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.add_world_tags_with_http_info(world_id, change_world_tags_request, async_req=True)
+        >>> result = thread.get()
+
+        :param world_id: Must be a valid world ID. (required)
+        :type world_id: str
+        :param change_world_tags_request: (required)
+        :type change_world_tags_request: ChangeWorldTagsRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(World, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'world_id',
+            'change_world_tags_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_world_tags" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'world_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('world_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `world_id` when calling `add_world_tags`")  # noqa: E501
+        # verify the required parameter 'change_world_tags_request' is set
+        if self.api_client.client_side_validation and local_var_params.get('change_world_tags_request') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `change_world_tags_request` when calling `add_world_tags`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'world_id' in local_var_params:
+            path_params['worldId'] = local_var_params['world_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'change_world_tags_request' in local_var_params:
+            body_params = local_var_params['change_world_tags_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "World",
+            400: "Error",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/worlds/{worldId}/addTags', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
     def check_user_persistence_exists(self, user_id, world_id, **kwargs):  # noqa: E501
         """Check User Persistence Exists  # noqa: E501
 
@@ -725,6 +882,151 @@ class WorldsApi(object):
 
         return self.api_client.call_api(
             '/worlds/{worldId}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def delete_world_platform(self, world_id, published_platform, **kwargs):  # noqa: E501
+        """Delete World Platform  # noqa: E501
+
+        Deletes a world platform.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_world_platform(world_id, published_platform, async_req=True)
+        >>> result = thread.get()
+
+        :param world_id: Must be a valid world ID. (required)
+        :type world_id: str
+        :param published_platform: A platform the world supports. (required)
+        :type published_platform: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: None
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.delete_world_platform_with_http_info(world_id, published_platform, **kwargs)  # noqa: E501
+
+    def delete_world_platform_with_http_info(self, world_id, published_platform, **kwargs):  # noqa: E501
+        """Delete World Platform  # noqa: E501
+
+        Deletes a world platform.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_world_platform_with_http_info(world_id, published_platform, async_req=True)
+        >>> result = thread.get()
+
+        :param world_id: Must be a valid world ID. (required)
+        :type world_id: str
+        :param published_platform: A platform the world supports. (required)
+        :type published_platform: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: None
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'world_id',
+            'published_platform'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_world_platform" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'world_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('world_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `world_id` when calling `delete_world_platform`")  # noqa: E501
+        # verify the required parameter 'published_platform' is set
+        if self.api_client.client_side_validation and local_var_params.get('published_platform') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `published_platform` when calling `delete_world_platform`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'world_id' in local_var_params:
+            path_params['worldId'] = local_var_params['world_id']  # noqa: E501
+        if 'published_platform' in local_var_params:
+            path_params['publishedPlatform'] = local_var_params['published_platform']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {}
+
+        return self.api_client.call_api(
+            '/worlds/{worldId}/platform/{publishedPlatform}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -2118,6 +2420,163 @@ class WorldsApi(object):
 
         return self.api_client.call_api(
             '/worlds/{worldId}/publish', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def remove_world_tags(self, world_id, change_world_tags_request, **kwargs):  # noqa: E501
+        """Remove World Tags  # noqa: E501
+
+        Removes tags from the world's profile  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.remove_world_tags(world_id, change_world_tags_request, async_req=True)
+        >>> result = thread.get()
+
+        :param world_id: Must be a valid world ID. (required)
+        :type world_id: str
+        :param change_world_tags_request: (required)
+        :type change_world_tags_request: ChangeWorldTagsRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: World
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.remove_world_tags_with_http_info(world_id, change_world_tags_request, **kwargs)  # noqa: E501
+
+    def remove_world_tags_with_http_info(self, world_id, change_world_tags_request, **kwargs):  # noqa: E501
+        """Remove World Tags  # noqa: E501
+
+        Removes tags from the world's profile  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.remove_world_tags_with_http_info(world_id, change_world_tags_request, async_req=True)
+        >>> result = thread.get()
+
+        :param world_id: Must be a valid world ID. (required)
+        :type world_id: str
+        :param change_world_tags_request: (required)
+        :type change_world_tags_request: ChangeWorldTagsRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(World, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'world_id',
+            'change_world_tags_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_world_tags" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'world_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('world_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `world_id` when calling `remove_world_tags`")  # noqa: E501
+        # verify the required parameter 'change_world_tags_request' is set
+        if self.api_client.client_side_validation and local_var_params.get('change_world_tags_request') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `change_world_tags_request` when calling `remove_world_tags`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'world_id' in local_var_params:
+            path_params['worldId'] = local_var_params['world_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'change_world_tags_request' in local_var_params:
+            body_params = local_var_params['change_world_tags_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "World",
+            400: "Error",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/worlds/{worldId}/removeTags', 'POST',
             path_params,
             query_params,
             header_params,

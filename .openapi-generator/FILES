@@ -53,6 +53,7 @@ docs/CalendarEventDiscoveryScope.md
 docs/CalendarEventPlatform.md
 docs/CalendarEventUserInterest.md
 docs/ChangeUserTagsRequest.md
+docs/ChangeWorldTagsRequest.md
 docs/ContentFilter.md
 docs/CreateAvatarModerationRequest.md
 docs/CreateAvatarRequest.md
@@ -66,6 +67,7 @@ docs/CreateGroupPostRequest.md
 docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
 docs/CreateInstanceRequest.md
+docs/CreateJamSubmissionRequest.md
 docs/CreatePropRequest.md
 docs/CreateWorldRequest.md
 docs/CurrentUser.md
@@ -76,6 +78,8 @@ docs/DeveloperType.md
 docs/Disable2FAResult.md
 docs/DiscordDetails.md
 docs/DynamicContentRow.md
+docs/EarningsMetrics.md
+docs/EarningsMetricsTotals.md
 docs/EconomyAccount.md
 docs/EconomyApi.md
 docs/EquipInventoryItemRequest.md
@@ -170,6 +174,7 @@ docs/InviteRequest.md
 docs/InviteResponse.md
 docs/Jam.md
 docs/JamStateChangeDates.md
+docs/JamSubmission.md
 docs/JamsApi.md
 docs/JoinGroupRequest.md
 docs/License.md
@@ -226,12 +231,16 @@ docs/ProductListing.md
 docs/ProductListingType.md
 docs/ProductListingVariant.md
 docs/ProductPurchase.md
+docs/ProductPurchaseHistory.md
+docs/ProductPurchaseLocationType.md
 docs/ProductPurchasePurchaseContext.md
+docs/ProductPurchaseRecord.md
 docs/ProductType.md
 docs/Prop.md
 docs/PropPublishStatus.md
 docs/PropUnityPackage.md
 docs/PropsApi.md
+docs/PurchaseContextData.md
 docs/PurchaseProductListingRequest.md
 docs/Region.md
 docs/RegisterUserAccountRequest.md
@@ -243,7 +252,13 @@ docs/RequestInviteRequest.md
 docs/RespondGroupJoinRequest.md
 docs/RespondNotificationV2Request.md
 docs/Response.md
+docs/RewardBadge.md
+docs/RewardRedemption.md
+docs/RewardRedemptionData.md
+docs/RewardRedemptionRequest.md
+docs/RewardRedemptionResult.md
 docs/SearchGroupMembers200Response.md
+docs/SellerEligibility.md
 docs/SentNotification.md
 docs/ServiceQueueStats.md
 docs/ServiceStatus.md
@@ -254,7 +269,6 @@ docs/Store.md
 docs/StoreShelf.md
 docs/StoreType.md
 docs/StoreView.md
-docs/Submission.md
 docs/SubmitModerationReportRequest.md
 docs/SubmitModerationReportRequestDetails.md
 docs/Subscription.md
@@ -270,6 +284,7 @@ docs/TransactionStatus.md
 docs/TransactionSteamInfo.md
 docs/TransactionSteamWalletInfo.md
 docs/TransferGroupRequest.md
+docs/TutorialStatus.md
 docs/TwoFactorAuthCode.md
 docs/TwoFactorEmailCode.md
 docs/TwoFactorRecoveryCodes.md
@@ -391,6 +406,7 @@ vrchatapi/models/calendar_event_discovery_scope.py
 vrchatapi/models/calendar_event_platform.py
 vrchatapi/models/calendar_event_user_interest.py
 vrchatapi/models/change_user_tags_request.py
+vrchatapi/models/change_world_tags_request.py
 vrchatapi/models/content_filter.py
 vrchatapi/models/create_avatar_moderation_request.py
 vrchatapi/models/create_avatar_request.py
@@ -404,6 +420,7 @@ vrchatapi/models/create_group_post_request.py
 vrchatapi/models/create_group_request.py
 vrchatapi/models/create_group_role_request.py
 vrchatapi/models/create_instance_request.py
+vrchatapi/models/create_jam_submission_request.py
 vrchatapi/models/create_prop_request.py
 vrchatapi/models/create_world_request.py
 vrchatapi/models/current_user.py
@@ -414,6 +431,8 @@ vrchatapi/models/developer_type.py
 vrchatapi/models/disable2_fa_result.py
 vrchatapi/models/discord_details.py
 vrchatapi/models/dynamic_content_row.py
+vrchatapi/models/earnings_metrics.py
+vrchatapi/models/earnings_metrics_totals.py
 vrchatapi/models/economy_account.py
 vrchatapi/models/equip_inventory_item_request.py
 vrchatapi/models/error.py
@@ -500,6 +519,7 @@ vrchatapi/models/invite_request.py
 vrchatapi/models/invite_response.py
 vrchatapi/models/jam.py
 vrchatapi/models/jam_state_change_dates.py
+vrchatapi/models/jam_submission.py
 vrchatapi/models/join_group_request.py
 vrchatapi/models/license.py
 vrchatapi/models/license_action.py
@@ -551,11 +571,15 @@ vrchatapi/models/product_listing.py
 vrchatapi/models/product_listing_type.py
 vrchatapi/models/product_listing_variant.py
 vrchatapi/models/product_purchase.py
+vrchatapi/models/product_purchase_history.py
+vrchatapi/models/product_purchase_location_type.py
 vrchatapi/models/product_purchase_purchase_context.py
+vrchatapi/models/product_purchase_record.py
 vrchatapi/models/product_type.py
 vrchatapi/models/prop.py
 vrchatapi/models/prop_publish_status.py
 vrchatapi/models/prop_unity_package.py
+vrchatapi/models/purchase_context_data.py
 vrchatapi/models/purchase_product_listing_request.py
 vrchatapi/models/region.py
 vrchatapi/models/register_user_account_request.py
@@ -567,7 +591,13 @@ vrchatapi/models/request_invite_request.py
 vrchatapi/models/respond_group_join_request.py
 vrchatapi/models/respond_notification_v2_request.py
 vrchatapi/models/response.py
+vrchatapi/models/reward_badge.py
+vrchatapi/models/reward_redemption.py
+vrchatapi/models/reward_redemption_data.py
+vrchatapi/models/reward_redemption_request.py
+vrchatapi/models/reward_redemption_result.py
 vrchatapi/models/search_group_members200_response.py
+vrchatapi/models/seller_eligibility.py
 vrchatapi/models/sent_notification.py
 vrchatapi/models/service_queue_stats.py
 vrchatapi/models/service_status.py
@@ -578,7 +608,6 @@ vrchatapi/models/store.py
 vrchatapi/models/store_shelf.py
 vrchatapi/models/store_type.py
 vrchatapi/models/store_view.py
-vrchatapi/models/submission.py
 vrchatapi/models/submit_moderation_report_request.py
 vrchatapi/models/submit_moderation_report_request_details.py
 vrchatapi/models/subscription.py
@@ -594,6 +623,7 @@ vrchatapi/models/transaction_status.py
 vrchatapi/models/transaction_steam_info.py
 vrchatapi/models/transaction_steam_wallet_info.py
 vrchatapi/models/transfer_group_request.py
+vrchatapi/models/tutorial_status.py
 vrchatapi/models/two_factor_auth_code.py
 vrchatapi/models/two_factor_email_code.py
 vrchatapi/models/two_factor_recovery_codes.py

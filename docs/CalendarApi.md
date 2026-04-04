@@ -56,7 +56,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.CalendarApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 create_calendar_event_request = vrchatapi.CreateCalendarEventRequest() # CreateCalendarEventRequest | 
 
     try:
@@ -134,8 +134,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.CalendarApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-calendar_id = 'cal_00000000-0000-0000-0000-000000000000' # str | Must be a valid calendar ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+calendar_id = 'calendar_id_example' # str | Must be a valid calendar ID.
 
     try:
         # Delete a calendar event
@@ -305,8 +305,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.CalendarApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-calendar_id = 'cal_00000000-0000-0000-0000-000000000000' # str | Must be a valid calendar ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+calendar_id = 'calendar_id_example' # str | Must be a valid calendar ID.
 follow_calendar_event_request = vrchatapi.FollowCalendarEventRequest() # FollowCalendarEventRequest | 
 
     try:
@@ -617,8 +617,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.CalendarApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-calendar_id = 'cal_00000000-0000-0000-0000-000000000000' # str | Must be a valid calendar ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+calendar_id = 'calendar_id_example' # str | Must be a valid calendar ID.
 
     try:
         # Get a calendar event
@@ -682,8 +682,8 @@ configuration = vrchatapi.Configuration(
 with vrchatapi.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.CalendarApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-calendar_id = 'cal_00000000-0000-0000-0000-000000000000' # str | Must be a valid calendar ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+calendar_id = 'calendar_id_example' # str | Must be a valid calendar ID.
 
     try:
         # Download calendar event as ICS
@@ -759,7 +759,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.CalendarApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 date = '2013-10-20T19:20:30+01:00' # datetime | The month to search in. (optional)
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
@@ -839,7 +839,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.CalendarApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Get next calendar event
@@ -996,8 +996,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.CalendarApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-calendar_id = 'cal_00000000-0000-0000-0000-000000000000' # str | Must be a valid calendar ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+calendar_id = 'calendar_id_example' # str | Must be a valid calendar ID.
 update_calendar_event_request = vrchatapi.UpdateCalendarEventRequest() # UpdateCalendarEventRequest | 
 
     try:

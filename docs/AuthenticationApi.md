@@ -194,7 +194,7 @@ configuration = vrchatapi.Configuration(
 with vrchatapi.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.AuthenticationApi(api_client)
-    id = 'usr_00000000-0000-0000-0000-000000000000' # str | Target user for which to verify email.
+    id = 'id_example' # str | Target user for which to verify email.
 verify_email = 'eml_00000000-0000-0000-0000-000000000000' # str | Token to verify email.
 
     try:

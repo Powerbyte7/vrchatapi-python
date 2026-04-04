@@ -94,8 +94,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-group_gallery_id = 'ggal_00000000-0000-0000-0000-000000000000' # str | Must be a valid group gallery ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+group_gallery_id = 'group_gallery_id_example' # str | Must be a valid group gallery ID.
 add_group_gallery_image_request = vrchatapi.AddGroupGalleryImageRequest() # AddGroupGalleryImageRequest | 
 
     try:
@@ -173,9 +173,9 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 user_id = 'user_id_example' # str | Must be a valid user ID.
-group_role_id = 'grol_00000000-0000-0000-0000-000000000000' # str | Must be a valid group role ID.
+group_role_id = 'group_role_id_example' # str | Must be a valid group role ID.
 
     try:
         # Add Role to GroupMember
@@ -252,7 +252,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 create_group_post_request = vrchatapi.CreateGroupPostRequest() # CreateGroupPostRequest | 
 
     try:
@@ -328,7 +328,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 ban_group_member_request = vrchatapi.BanGroupMemberRequest() # BanGroupMemberRequest | 
 
     try:
@@ -406,7 +406,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Block Group
@@ -483,7 +483,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Cancel Group Join Request
@@ -558,7 +558,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Cancel Group Transfer
@@ -708,7 +708,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 create_group_announcement_request = vrchatapi.CreateGroupAnnouncementRequest() # CreateGroupAnnouncementRequest | 
 
     try:
@@ -785,7 +785,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 create_group_gallery_request = vrchatapi.CreateGroupGalleryRequest() # CreateGroupGalleryRequest | 
 
     try:
@@ -862,7 +862,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 create_group_invite_request = vrchatapi.CreateGroupInviteRequest() # CreateGroupInviteRequest | 
 
     try:
@@ -940,7 +940,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 create_group_role_request = vrchatapi.CreateGroupRoleRequest() # CreateGroupRoleRequest | 
 
     try:
@@ -1017,7 +1017,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 decline_group_invite_request = vrchatapi.DeclineGroupInviteRequest() # DeclineGroupInviteRequest |  (optional)
 
     try:
@@ -1095,7 +1095,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 hard_delete = True # bool |  (optional)
 
     try:
@@ -1172,7 +1172,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Delete Group Announcement
@@ -1247,8 +1247,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-group_gallery_id = 'ggal_00000000-0000-0000-0000-000000000000' # str | Must be a valid group gallery ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+group_gallery_id = 'group_gallery_id_example' # str | Must be a valid group gallery ID.
 
     try:
         # Delete Group Gallery
@@ -1324,9 +1324,9 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-group_gallery_id = 'ggal_00000000-0000-0000-0000-000000000000' # str | Must be a valid group gallery ID.
-group_gallery_image_id = 'ggim_00000000-0000-0000-0000-000000000000' # str | Must be a valid group gallery image ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+group_gallery_id = 'group_gallery_id_example' # str | Must be a valid group gallery ID.
+group_gallery_image_id = 'group_gallery_image_id_example' # str | Must be a valid group gallery image ID.
 
     try:
         # Delete Group Gallery Image
@@ -1404,7 +1404,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 user_id = 'user_id_example' # str | Must be a valid user ID.
 
     try:
@@ -1480,7 +1480,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 notification_id = 'notification_id_example' # str | Must be a valid notification ID.
 
     try:
@@ -1557,8 +1557,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-group_role_id = 'grol_00000000-0000-0000-0000-000000000000' # str | Must be a valid group role ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+group_role_id = 'group_role_id_example' # str | Must be a valid group role ID.
 
     try:
         # Delete Group Role
@@ -1634,7 +1634,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 include_roles = True # bool | Include roles for the Group object. Defaults to false. (optional)
 
     try:
@@ -1711,7 +1711,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Get Group Announcement
@@ -1786,7 +1786,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Get Group Audit Log Entry Types
@@ -1861,7 +1861,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
 start_date = '2013-10-20T19:20:30+01:00' # datetime | The start date of the search range. (optional)
@@ -1950,7 +1950,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
 
@@ -2030,8 +2030,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-group_gallery_id = 'ggal_00000000-0000-0000-0000-000000000000' # str | Must be a valid group gallery ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+group_gallery_id = 'group_gallery_id_example' # str | Must be a valid group gallery ID.
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
 approved = True # bool | If specified, only returns images that have been approved or not approved. (optional)
@@ -2113,7 +2113,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Get Group Instances
@@ -2188,7 +2188,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
 
@@ -2268,7 +2268,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 user_id = 'user_id_example' # str | Must be a valid user ID.
 
     try:
@@ -2346,7 +2346,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
 sort = vrchatapi.GroupSearchSort() # GroupSearchSort | The sort order of Group Member results (optional)
@@ -2430,7 +2430,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # List Group Permissions
@@ -2506,7 +2506,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
 public_only = True # bool | See public posts only. (optional)
@@ -2586,7 +2586,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
 blocked = True # bool | See blocked join requests (optional)
@@ -2738,7 +2738,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Get Group Roles
@@ -2813,7 +2813,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 transfer_target_id = 'transfer_target_id_example' # str | The UserID of the prospective transferee. (optional)
 
     try:
@@ -2891,7 +2891,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 transfer_group_request = vrchatapi.TransferGroupRequest() # TransferGroupRequest |  (optional)
 
     try:
@@ -2969,7 +2969,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 confirm_override_block = True # bool | Manually override the failure that would occur if the user has blocked the group. (optional)
 join_group_request = vrchatapi.JoinGroupRequest() # JoinGroupRequest |  (optional)
 
@@ -3049,7 +3049,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 user_id = 'user_id_example' # str | Must be a valid user ID.
 
     try:
@@ -3127,7 +3127,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 
     try:
         # Leave Group
@@ -3201,9 +3201,9 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 user_id = 'user_id_example' # str | Must be a valid user ID.
-group_role_id = 'grol_00000000-0000-0000-0000-000000000000' # str | Must be a valid group role ID.
+group_role_id = 'group_role_id_example' # str | Must be a valid group role ID.
 
     try:
         # Remove Role from GroupMember
@@ -3280,7 +3280,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 user_id = 'user_id_example' # str | Must be a valid user ID.
 respond_group_join_request = vrchatapi.RespondGroupJoinRequest() # RespondGroupJoinRequest | 
 
@@ -3358,7 +3358,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 query = 'query_example' # str | Filter for member displayName.
 n = 60 # int | The number of objects to return. (optional) (default to 60)
 offset = 56 # int | A zero-based offset from the default object sorting from where search results start. (optional)
@@ -3507,7 +3507,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 user_id = 'user_id_example' # str | Must be a valid user ID.
 
     try:
@@ -3584,7 +3584,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 update_group_request = vrchatapi.UpdateGroupRequest() # UpdateGroupRequest |  (optional)
 
     try:
@@ -3661,8 +3661,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-group_gallery_id = 'ggal_00000000-0000-0000-0000-000000000000' # str | Must be a valid group gallery ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+group_gallery_id = 'group_gallery_id_example' # str | Must be a valid group gallery ID.
 update_group_gallery_request = vrchatapi.UpdateGroupGalleryRequest() # UpdateGroupGalleryRequest |  (optional)
 
     try:
@@ -3740,7 +3740,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 user_id = 'user_id_example' # str | Must be a valid user ID.
 update_group_member_request = vrchatapi.UpdateGroupMemberRequest() # UpdateGroupMemberRequest |  (optional)
 
@@ -3819,7 +3819,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 notification_id = 'notification_id_example' # str | Must be a valid notification ID.
 create_group_post_request = vrchatapi.CreateGroupPostRequest() # CreateGroupPostRequest | 
 
@@ -3898,7 +3898,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
 update_group_representation_request = vrchatapi.UpdateGroupRepresentationRequest() # UpdateGroupRepresentationRequest | 
 
     try:
@@ -3975,8 +3975,8 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.GroupsApi(api_client)
-    group_id = 'grp_00000000-0000-0000-0000-000000000000' # str | Must be a valid group ID.
-group_role_id = 'grol_00000000-0000-0000-0000-000000000000' # str | Must be a valid group role ID.
+    group_id = 'group_id_example' # str | Must be a valid group ID.
+group_role_id = 'group_role_id_example' # str | Must be a valid group role ID.
 update_group_role_request = vrchatapi.UpdateGroupRoleRequest() # UpdateGroupRoleRequest |  (optional)
 
     try:

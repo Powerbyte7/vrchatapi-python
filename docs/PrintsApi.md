@@ -48,7 +48,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.PrintsApi(api_client)
-    print_id = 'prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa' # str | Print ID.
+    print_id = 'print_id_example' # str | Print ID.
 
     try:
         # Delete Print
@@ -121,7 +121,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.PrintsApi(api_client)
-    print_id = 'prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa' # str | Print ID.
+    print_id = 'print_id_example' # str | Print ID.
 image = '/path/to/file' # file | The binary blob of the png file.
 note = 'note_example' # str | The caption for the image. (optional)
 
@@ -199,7 +199,7 @@ configuration.api_key['authCookie'] = 'YOUR_API_KEY'
 with vrchatapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = vrchatapi.PrintsApi(api_client)
-    print_id = 'prnt_0a0aa0a0-85ea-42eb-b2f7-4840d7f341fa' # str | Print ID.
+    print_id = 'print_id_example' # str | Print ID.
 
     try:
         # Get Print

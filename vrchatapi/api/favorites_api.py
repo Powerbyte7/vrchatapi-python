@@ -191,7 +191,7 @@ class FavoritesApi(object):
         >>> result = thread.get()
 
         :param favorite_group_type: The type of group to fetch, must be a valid FavoriteType. (required)
-        :type favorite_group_type: str
+        :type favorite_group_type: FavoriteType
         :param favorite_group_name: The name of the group to fetch, must be a name of a FavoriteGroup. (required)
         :type favorite_group_name: str
         :param user_id: Must be a valid user ID. (required)
@@ -225,7 +225,7 @@ class FavoritesApi(object):
         >>> result = thread.get()
 
         :param favorite_group_type: The type of group to fetch, must be a valid FavoriteType. (required)
-        :type favorite_group_type: str
+        :type favorite_group_type: FavoriteType
         :param favorite_group_name: The name of the group to fetch, must be a name of a FavoriteGroup. (required)
         :type favorite_group_name: str
         :param user_id: Must be a valid user ID. (required)
@@ -348,7 +348,7 @@ class FavoritesApi(object):
         >>> result = thread.get()
 
         :param favorite_group_type: The type of group to fetch, must be a valid FavoriteType. (required)
-        :type favorite_group_type: str
+        :type favorite_group_type: FavoriteType
         :param favorite_group_name: The name of the group to fetch, must be a name of a FavoriteGroup. (required)
         :type favorite_group_name: str
         :param user_id: Must be a valid user ID. (required)
@@ -382,7 +382,7 @@ class FavoritesApi(object):
         >>> result = thread.get()
 
         :param favorite_group_type: The type of group to fetch, must be a valid FavoriteType. (required)
-        :type favorite_group_type: str
+        :type favorite_group_type: FavoriteType
         :param favorite_group_name: The name of the group to fetch, must be a name of a FavoriteGroup. (required)
         :type favorite_group_name: str
         :param user_id: Must be a valid user ID. (required)
@@ -1099,7 +1099,7 @@ class FavoritesApi(object):
         >>> result = thread.get()
 
         :param favorite_group_type: The type of group to fetch, must be a valid FavoriteType. (required)
-        :type favorite_group_type: str
+        :type favorite_group_type: FavoriteType
         :param favorite_group_name: The name of the group to fetch, must be a name of a FavoriteGroup. (required)
         :type favorite_group_name: str
         :param user_id: Must be a valid user ID. (required)
@@ -1135,7 +1135,7 @@ class FavoritesApi(object):
         >>> result = thread.get()
 
         :param favorite_group_type: The type of group to fetch, must be a valid FavoriteType. (required)
-        :type favorite_group_type: str
+        :type favorite_group_type: FavoriteType
         :param favorite_group_name: The name of the group to fetch, must be a name of a FavoriteGroup. (required)
         :type favorite_group_name: str
         :param user_id: Must be a valid user ID. (required)
