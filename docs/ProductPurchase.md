@@ -11,13 +11,15 @@ Name | Type | Description | Notes
 **is_gift** | **bool** |  | 
 **is_receiver** | **bool** |  | 
 **is_seller** | **bool** |  | 
+**ledger_transaction_id** | **int** |  | [optional] 
 **listing_currently_available** | **bool** |  | 
+**listing_description** | **str** |  | [optional] 
 **listing_display_name** | **str** |  | 
 **listing_id** | **str** |  | 
 **listing_image_id** | **str** |  | 
 **listing_subtitle** | **str** |  | 
 **listing_type** | [**ProductListingType**](ProductListingType.md) |  | 
-**products** | **list[object]** |  | 
+**products** | [**list[ProductPurchaseProduct]**](ProductPurchaseProduct.md) |  | 
 **purchase_active** | **bool** |  | 
 **purchase_context** | [**ProductPurchasePurchaseContext**](ProductPurchasePurchaseContext.md) |  | 
 **purchase_current_status** | **str** |  | 
@@ -25,6 +27,7 @@ Name | Type | Description | Notes
 **purchase_duration** | **int** |  | [optional] 
 **purchase_duration_type** | **str** |  | [optional] 
 **purchase_end_date** | **datetime** |  | 
+**purchase_fee** | **int** |  | [optional] 
 **purchase_id** | **str** |  | 
 **purchase_latest** | **bool** |  | 
 **purchase_price** | **int** |  | 
@@ -33,6 +36,7 @@ Name | Type | Description | Notes
 **purchase_token** | **object** |  | 
 **purchase_type** | **str** |  | 
 **purchase_unit_price** | **int** |  | 
+**purchase_value** | **int** |  | [optional] 
 **receiver_display_name** | **str** |  | 
 **receiver_id** | **str** | A users unique ID, usually in the form of &#x60;usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469&#x60;. Legacy players can have old IDs in the form of &#x60;8JoV9XEdpo&#x60;. The ID can never be changed. | 
 **recurrable** | **bool** |  | 

@@ -68,6 +68,8 @@ docs/CreateGroupRequest.md
 docs/CreateGroupRoleRequest.md
 docs/CreateInstanceRequest.md
 docs/CreateJamSubmissionRequest.md
+docs/CreateListingRequest.md
+docs/CreateProductRequest.md
 docs/CreatePropRequest.md
 docs/CreateWorldRequest.md
 docs/CurrentUser.md
@@ -82,6 +84,11 @@ docs/EarningsMetrics.md
 docs/EarningsMetricsTotals.md
 docs/EconomyAccount.md
 docs/EconomyApi.md
+docs/EconomyBalances.md
+docs/EconomyPayout.md
+docs/EconomyPayoutEligibility.md
+docs/EconomyPayoutList.md
+docs/EconomyPayoutStatus.md
 docs/EquipInventoryItemRequest.md
 docs/Error.md
 docs/Favorite.md
@@ -233,6 +240,7 @@ docs/ProductListingVariant.md
 docs/ProductPurchase.md
 docs/ProductPurchaseHistory.md
 docs/ProductPurchaseLocationType.md
+docs/ProductPurchaseProduct.md
 docs/ProductPurchasePurchaseContext.md
 docs/ProductPurchaseRecord.md
 docs/ProductType.md
@@ -266,6 +274,7 @@ docs/ShareInventoryItemDirectRequest.md
 docs/SortOption.md
 docs/SortOptionProductPurchase.md
 docs/Store.md
+docs/StoreContext.md
 docs/StoreShelf.md
 docs/StoreType.md
 docs/StoreView.md
@@ -275,6 +284,7 @@ docs/Subscription.md
 docs/SubscriptionPeriod.md
 docs/Success.md
 docs/SuccessFlag.md
+docs/TiliaKyc.md
 docs/TiliaStatus.md
 docs/TiliaTOS.md
 docs/TokenBundle.md
@@ -301,6 +311,8 @@ docs/UpdateGroupRequest.md
 docs/UpdateGroupRoleRequest.md
 docs/UpdateInventoryItemRequest.md
 docs/UpdateInviteMessageRequest.md
+docs/UpdateListingRequest.md
+docs/UpdateProductRequest.md
 docs/UpdatePropRequest.md
 docs/UpdateTiliaTOSRequest.md
 docs/UpdateUserBadgeRequest.md
@@ -421,6 +433,8 @@ vrchatapi/models/create_group_request.py
 vrchatapi/models/create_group_role_request.py
 vrchatapi/models/create_instance_request.py
 vrchatapi/models/create_jam_submission_request.py
+vrchatapi/models/create_listing_request.py
+vrchatapi/models/create_product_request.py
 vrchatapi/models/create_prop_request.py
 vrchatapi/models/create_world_request.py
 vrchatapi/models/current_user.py
@@ -434,6 +448,11 @@ vrchatapi/models/dynamic_content_row.py
 vrchatapi/models/earnings_metrics.py
 vrchatapi/models/earnings_metrics_totals.py
 vrchatapi/models/economy_account.py
+vrchatapi/models/economy_balances.py
+vrchatapi/models/economy_payout.py
+vrchatapi/models/economy_payout_eligibility.py
+vrchatapi/models/economy_payout_list.py
+vrchatapi/models/economy_payout_status.py
 vrchatapi/models/equip_inventory_item_request.py
 vrchatapi/models/error.py
 vrchatapi/models/favorite.py
@@ -573,6 +592,7 @@ vrchatapi/models/product_listing_variant.py
 vrchatapi/models/product_purchase.py
 vrchatapi/models/product_purchase_history.py
 vrchatapi/models/product_purchase_location_type.py
+vrchatapi/models/product_purchase_product.py
 vrchatapi/models/product_purchase_purchase_context.py
 vrchatapi/models/product_purchase_record.py
 vrchatapi/models/product_type.py
@@ -605,6 +625,7 @@ vrchatapi/models/share_inventory_item_direct_request.py
 vrchatapi/models/sort_option.py
 vrchatapi/models/sort_option_product_purchase.py
 vrchatapi/models/store.py
+vrchatapi/models/store_context.py
 vrchatapi/models/store_shelf.py
 vrchatapi/models/store_type.py
 vrchatapi/models/store_view.py
@@ -614,6 +635,7 @@ vrchatapi/models/subscription.py
 vrchatapi/models/subscription_period.py
 vrchatapi/models/success.py
 vrchatapi/models/success_flag.py
+vrchatapi/models/tilia_kyc.py
 vrchatapi/models/tilia_status.py
 vrchatapi/models/tilia_tos.py
 vrchatapi/models/token_bundle.py
@@ -640,6 +662,8 @@ vrchatapi/models/update_group_request.py
 vrchatapi/models/update_group_role_request.py
 vrchatapi/models/update_inventory_item_request.py
 vrchatapi/models/update_invite_message_request.py
+vrchatapi/models/update_listing_request.py
+vrchatapi/models/update_product_request.py
 vrchatapi/models/update_prop_request.py
 vrchatapi/models/update_tilia_tos_request.py
 vrchatapi/models/update_user_badge_request.py

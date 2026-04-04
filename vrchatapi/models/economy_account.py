@@ -38,22 +38,36 @@ class EconomyAccount(object):
     openapi_types = {
         'account_activated_on': 'datetime',
         'account_id': 'str',
+        'account_seller_registered_on': 'datetime',
+        'account_seller_status': 'str',
         'blocked': 'bool',
+        'can_earn': 'bool',
+        'can_payout': 'bool',
         'can_spend': 'bool',
+        'skrill_email': 'str',
         'source': 'str',
+        'tilia_id': 'str',
+        'tilia_type': 'str',
         'user_id': 'str'
     }
 
     attribute_map = {
         'account_activated_on': 'accountActivatedOn',
         'account_id': 'accountId',
+        'account_seller_registered_on': 'accountSellerRegisteredOn',
+        'account_seller_status': 'accountSellerStatus',
         'blocked': 'blocked',
+        'can_earn': 'canEarn',
+        'can_payout': 'canPayout',
         'can_spend': 'canSpend',
+        'skrill_email': 'skrillEmail',
         'source': 'source',
+        'tilia_id': 'tiliaId',
+        'tilia_type': 'tiliaType',
         'user_id': 'userId'
     }
 
-    def __init__(self, account_activated_on=None, account_id=None, blocked=None, can_spend=None, source=None, user_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_activated_on=None, account_id=None, account_seller_registered_on=None, account_seller_status=None, blocked=None, can_earn=None, can_payout=None, can_spend=None, skrill_email=None, source=None, tilia_id=None, tilia_type=None, user_id=None, local_vars_configuration=None):  # noqa: E501
         """EconomyAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -61,17 +75,33 @@ class EconomyAccount(object):
 
         self._account_activated_on = None
         self._account_id = None
+        self._account_seller_registered_on = None
+        self._account_seller_status = None
         self._blocked = None
+        self._can_earn = None
+        self._can_payout = None
         self._can_spend = None
+        self._skrill_email = None
         self._source = None
+        self._tilia_id = None
+        self._tilia_type = None
         self._user_id = None
         self.discriminator = None
 
         self.account_activated_on = account_activated_on
         self.account_id = account_id
+        self.account_seller_registered_on = account_seller_registered_on
+        self.account_seller_status = account_seller_status
         self.blocked = blocked
+        if can_earn is not None:
+            self.can_earn = can_earn
+        if can_payout is not None:
+            self.can_payout = can_payout
         self.can_spend = can_spend
+        self.skrill_email = skrill_email
         self.source = source
+        self.tilia_id = tilia_id
+        self.tilia_type = tilia_type
         self.user_id = user_id
 
     @property
@@ -117,6 +147,48 @@ class EconomyAccount(object):
         self._account_id = account_id
 
     @property
+    def account_seller_registered_on(self):
+        """Gets the account_seller_registered_on of this EconomyAccount.  # noqa: E501
+
+
+        :return: The account_seller_registered_on of this EconomyAccount.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._account_seller_registered_on
+
+    @account_seller_registered_on.setter
+    def account_seller_registered_on(self, account_seller_registered_on):
+        """Sets the account_seller_registered_on of this EconomyAccount.
+
+
+        :param account_seller_registered_on: The account_seller_registered_on of this EconomyAccount.  # noqa: E501
+        :type account_seller_registered_on: datetime
+        """
+
+        self._account_seller_registered_on = account_seller_registered_on
+
+    @property
+    def account_seller_status(self):
+        """Gets the account_seller_status of this EconomyAccount.  # noqa: E501
+
+
+        :return: The account_seller_status of this EconomyAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_seller_status
+
+    @account_seller_status.setter
+    def account_seller_status(self, account_seller_status):
+        """Sets the account_seller_status of this EconomyAccount.
+
+
+        :param account_seller_status: The account_seller_status of this EconomyAccount.  # noqa: E501
+        :type account_seller_status: str
+        """
+
+        self._account_seller_status = account_seller_status
+
+    @property
     def blocked(self):
         """Gets the blocked of this EconomyAccount.  # noqa: E501
 
@@ -138,6 +210,48 @@ class EconomyAccount(object):
             raise ValueError("Invalid value for `blocked`, must not be `None`")  # noqa: E501
 
         self._blocked = blocked
+
+    @property
+    def can_earn(self):
+        """Gets the can_earn of this EconomyAccount.  # noqa: E501
+
+
+        :return: The can_earn of this EconomyAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_earn
+
+    @can_earn.setter
+    def can_earn(self, can_earn):
+        """Sets the can_earn of this EconomyAccount.
+
+
+        :param can_earn: The can_earn of this EconomyAccount.  # noqa: E501
+        :type can_earn: bool
+        """
+
+        self._can_earn = can_earn
+
+    @property
+    def can_payout(self):
+        """Gets the can_payout of this EconomyAccount.  # noqa: E501
+
+
+        :return: The can_payout of this EconomyAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_payout
+
+    @can_payout.setter
+    def can_payout(self, can_payout):
+        """Sets the can_payout of this EconomyAccount.
+
+
+        :param can_payout: The can_payout of this EconomyAccount.  # noqa: E501
+        :type can_payout: bool
+        """
+
+        self._can_payout = can_payout
 
     @property
     def can_spend(self):
@@ -163,6 +277,27 @@ class EconomyAccount(object):
         self._can_spend = can_spend
 
     @property
+    def skrill_email(self):
+        """Gets the skrill_email of this EconomyAccount.  # noqa: E501
+
+
+        :return: The skrill_email of this EconomyAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._skrill_email
+
+    @skrill_email.setter
+    def skrill_email(self, skrill_email):
+        """Sets the skrill_email of this EconomyAccount.
+
+
+        :param skrill_email: The skrill_email of this EconomyAccount.  # noqa: E501
+        :type skrill_email: str
+        """
+
+        self._skrill_email = skrill_email
+
+    @property
     def source(self):
         """Gets the source of this EconomyAccount.  # noqa: E501
 
@@ -184,6 +319,48 @@ class EconomyAccount(object):
             raise ValueError("Invalid value for `source`, must not be `None`")  # noqa: E501
 
         self._source = source
+
+    @property
+    def tilia_id(self):
+        """Gets the tilia_id of this EconomyAccount.  # noqa: E501
+
+
+        :return: The tilia_id of this EconomyAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._tilia_id
+
+    @tilia_id.setter
+    def tilia_id(self, tilia_id):
+        """Sets the tilia_id of this EconomyAccount.
+
+
+        :param tilia_id: The tilia_id of this EconomyAccount.  # noqa: E501
+        :type tilia_id: str
+        """
+
+        self._tilia_id = tilia_id
+
+    @property
+    def tilia_type(self):
+        """Gets the tilia_type of this EconomyAccount.  # noqa: E501
+
+
+        :return: The tilia_type of this EconomyAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._tilia_type
+
+    @tilia_type.setter
+    def tilia_type(self, tilia_type):
+        """Sets the tilia_type of this EconomyAccount.
+
+
+        :param tilia_type: The tilia_type of this EconomyAccount.  # noqa: E501
+        :type tilia_type: str
+        """
+
+        self._tilia_type = tilia_type
 
     @property
     def user_id(self):

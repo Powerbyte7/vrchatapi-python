@@ -36,6 +36,7 @@ class Store(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'created': 'datetime',
         'description': 'str',
         'display_name': 'str',
         'group_id': 'str',
@@ -46,13 +47,17 @@ class Store(object):
         'seller_id': 'str',
         'shelf_ids': 'list[str]',
         'shelves': 'list[StoreShelf]',
+        'store_context': 'StoreContext',
         'store_id': 'str',
+        'store_status': 'str',
         'store_type': 'StoreType',
         'tags': 'list[str]',
+        'updated': 'datetime',
         'world_id': 'str'
     }
 
     attribute_map = {
+        'created': 'created',
         'description': 'description',
         'display_name': 'displayName',
         'group_id': 'groupId',
@@ -63,18 +68,22 @@ class Store(object):
         'seller_id': 'sellerId',
         'shelf_ids': 'shelfIds',
         'shelves': 'shelves',
+        'store_context': 'storeContext',
         'store_id': 'storeId',
+        'store_status': 'storeStatus',
         'store_type': 'storeType',
         'tags': 'tags',
+        'updated': 'updated',
         'world_id': 'worldId'
     }
 
-    def __init__(self, description=None, display_name=None, group_id=None, id=None, listing_ids=None, listings=None, seller_display_name=None, seller_id=None, shelf_ids=None, shelves=None, store_id=None, store_type=None, tags=None, world_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, created=None, description=None, display_name=None, group_id=None, id=None, listing_ids=None, listings=None, seller_display_name=None, seller_id=None, shelf_ids=None, shelves=None, store_context=None, store_id=None, store_status=None, store_type=None, tags=None, updated=None, world_id=None, local_vars_configuration=None):  # noqa: E501
         """Store - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._created = None
         self._description = None
         self._display_name = None
         self._group_id = None
@@ -85,12 +94,17 @@ class Store(object):
         self._seller_id = None
         self._shelf_ids = None
         self._shelves = None
+        self._store_context = None
         self._store_id = None
+        self._store_status = None
         self._store_type = None
         self._tags = None
+        self._updated = None
         self._world_id = None
         self.discriminator = None
 
+        if created is not None:
+            self.created = created
         self.description = description
         self.display_name = display_name
         if group_id is not None:
@@ -106,11 +120,38 @@ class Store(object):
             self.shelf_ids = shelf_ids
         if shelves is not None:
             self.shelves = shelves
+        if store_context is not None:
+            self.store_context = store_context
         self.store_id = store_id
+        if store_status is not None:
+            self.store_status = store_status
         self.store_type = store_type
         self.tags = tags
+        if updated is not None:
+            self.updated = updated
         if world_id is not None:
             self.world_id = world_id
+
+    @property
+    def created(self):
+        """Gets the created of this Store.  # noqa: E501
+
+
+        :return: The created of this Store.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        """Sets the created of this Store.
+
+
+        :param created: The created of this Store.  # noqa: E501
+        :type created: datetime
+        """
+
+        self._created = created
 
     @property
     def description(self):
@@ -343,6 +384,27 @@ class Store(object):
         self._shelves = shelves
 
     @property
+    def store_context(self):
+        """Gets the store_context of this Store.  # noqa: E501
+
+
+        :return: The store_context of this Store.  # noqa: E501
+        :rtype: StoreContext
+        """
+        return self._store_context
+
+    @store_context.setter
+    def store_context(self, store_context):
+        """Sets the store_context of this Store.
+
+
+        :param store_context: The store_context of this Store.  # noqa: E501
+        :type store_context: StoreContext
+        """
+
+        self._store_context = store_context
+
+    @property
     def store_id(self):
         """Gets the store_id of this Store.  # noqa: E501
 
@@ -364,6 +426,27 @@ class Store(object):
             raise ValueError("Invalid value for `store_id`, must not be `None`")  # noqa: E501
 
         self._store_id = store_id
+
+    @property
+    def store_status(self):
+        """Gets the store_status of this Store.  # noqa: E501
+
+
+        :return: The store_status of this Store.  # noqa: E501
+        :rtype: str
+        """
+        return self._store_status
+
+    @store_status.setter
+    def store_status(self, store_status):
+        """Sets the store_status of this Store.
+
+
+        :param store_status: The store_status of this Store.  # noqa: E501
+        :type store_status: str
+        """
+
+        self._store_status = store_status
 
     @property
     def store_type(self):
@@ -410,6 +493,27 @@ class Store(object):
             raise ValueError("Invalid value for `tags`, must not be `None`")  # noqa: E501
 
         self._tags = tags
+
+    @property
+    def updated(self):
+        """Gets the updated of this Store.  # noqa: E501
+
+
+        :return: The updated of this Store.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated
+
+    @updated.setter
+    def updated(self, updated):
+        """Sets the updated of this Store.
+
+
+        :param updated: The updated of this Store.  # noqa: E501
+        :type updated: datetime
+        """
+
+        self._updated = updated
 
     @property
     def world_id(self):

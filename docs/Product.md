@@ -14,8 +14,12 @@ Name | Type | Description | Notes
 **group_role_id** | **str** |  | [optional] 
 **id** | **str** |  | 
 **image_id** | **str** |  | 
+**image_url** | **str** |  | [optional] 
 **parent_listings** | **list[str]** |  | 
 **product_type** | [**ProductType**](ProductType.md) |  | 
+**product_type_label** | **str** |  | [optional] 
+**purchase_count** | **int** |  | [optional] 
+**purchase_count_quantity** | **int** |  | [optional] 
 **seller_display_name** | **str** |  | 
 **seller_id** | **str** |  | 
 **tags** | **list[str]** |  | 

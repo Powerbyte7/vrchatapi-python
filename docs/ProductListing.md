@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | 
+**archived** | **bool** |  | [optional] 
 **buyer_refundable** | **bool** |  | 
+**created** | **datetime** |  | [optional] 
 **description** | **str** |  | 
 **display_name** | **str** |  | 
 **duration** | **int** |  | [optional] 
@@ -26,6 +28,8 @@ Name | Type | Description | Notes
 **product_ids** | **list[str]** |  | 
 **product_type** | [**ProductType**](ProductType.md) |  | 
 **products** | **list[object]** |  | 
+**purchase_count** | **int** |  | [optional] 
+**purchase_count_quantity** | **int** |  | [optional] 
 **quantifiable** | **bool** |  | [optional] 
 **recurrable** | **bool** |  | 
 **refundable** | **bool** |  | 
@@ -36,6 +40,7 @@ Name | Type | Description | Notes
 **store_ids** | **list[str]** |  | 
 **subtitle** | **str** |  | [optional] 
 **tags** | **list[str]** |  | [optional] 
+**updated** | **datetime** |  | [optional] 
 **vrc_plus_discount_price** | **int** |  | [optional] 
 **when_to_expire** | **datetime** |  | [optional] 
 

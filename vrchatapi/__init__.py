@@ -113,6 +113,8 @@ from vrchatapi.models.create_group_request import CreateGroupRequest
 from vrchatapi.models.create_group_role_request import CreateGroupRoleRequest
 from vrchatapi.models.create_instance_request import CreateInstanceRequest
 from vrchatapi.models.create_jam_submission_request import CreateJamSubmissionRequest
+from vrchatapi.models.create_listing_request import CreateListingRequest
+from vrchatapi.models.create_product_request import CreateProductRequest
 from vrchatapi.models.create_prop_request import CreatePropRequest
 from vrchatapi.models.create_world_request import CreateWorldRequest
 from vrchatapi.models.current_user import CurrentUser
@@ -126,6 +128,11 @@ from vrchatapi.models.dynamic_content_row import DynamicContentRow
 from vrchatapi.models.earnings_metrics import EarningsMetrics
 from vrchatapi.models.earnings_metrics_totals import EarningsMetricsTotals
 from vrchatapi.models.economy_account import EconomyAccount
+from vrchatapi.models.economy_balances import EconomyBalances
+from vrchatapi.models.economy_payout import EconomyPayout
+from vrchatapi.models.economy_payout_eligibility import EconomyPayoutEligibility
+from vrchatapi.models.economy_payout_list import EconomyPayoutList
+from vrchatapi.models.economy_payout_status import EconomyPayoutStatus
 from vrchatapi.models.equip_inventory_item_request import EquipInventoryItemRequest
 from vrchatapi.models.error import Error
 from vrchatapi.models.favorite import Favorite
@@ -265,6 +272,7 @@ from vrchatapi.models.product_listing_variant import ProductListingVariant
 from vrchatapi.models.product_purchase import ProductPurchase
 from vrchatapi.models.product_purchase_history import ProductPurchaseHistory
 from vrchatapi.models.product_purchase_location_type import ProductPurchaseLocationType
+from vrchatapi.models.product_purchase_product import ProductPurchaseProduct
 from vrchatapi.models.product_purchase_purchase_context import ProductPurchasePurchaseContext
 from vrchatapi.models.product_purchase_record import ProductPurchaseRecord
 from vrchatapi.models.product_type import ProductType
@@ -297,6 +305,7 @@ from vrchatapi.models.share_inventory_item_direct_request import ShareInventoryI
 from vrchatapi.models.sort_option import SortOption
 from vrchatapi.models.sort_option_product_purchase import SortOptionProductPurchase
 from vrchatapi.models.store import Store
+from vrchatapi.models.store_context import StoreContext
 from vrchatapi.models.store_shelf import StoreShelf
 from vrchatapi.models.store_type import StoreType
 from vrchatapi.models.store_view import StoreView
@@ -306,6 +315,7 @@ from vrchatapi.models.subscription import Subscription
 from vrchatapi.models.subscription_period import SubscriptionPeriod
 from vrchatapi.models.success import Success
 from vrchatapi.models.success_flag import SuccessFlag
+from vrchatapi.models.tilia_kyc import TiliaKyc
 from vrchatapi.models.tilia_status import TiliaStatus
 from vrchatapi.models.tilia_tos import TiliaTOS
 from vrchatapi.models.token_bundle import TokenBundle
@@ -332,6 +342,8 @@ from vrchatapi.models.update_group_request import UpdateGroupRequest
 from vrchatapi.models.update_group_role_request import UpdateGroupRoleRequest
 from vrchatapi.models.update_inventory_item_request import UpdateInventoryItemRequest
 from vrchatapi.models.update_invite_message_request import UpdateInviteMessageRequest
+from vrchatapi.models.update_listing_request import UpdateListingRequest
+from vrchatapi.models.update_product_request import UpdateProductRequest
 from vrchatapi.models.update_prop_request import UpdatePropRequest
 from vrchatapi.models.update_tilia_tos_request import UpdateTiliaTOSRequest
 from vrchatapi.models.update_user_badge_request import UpdateUserBadgeRequest

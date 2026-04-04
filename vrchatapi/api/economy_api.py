@@ -36,6 +36,581 @@ class EconomyApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def create_product(self, create_product_request, **kwargs):  # noqa: E501
+        """Create Product  # noqa: E501
+
+        Creates a product and returns the new Product object.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_product(create_product_request, async_req=True)
+        >>> result = thread.get()
+
+        :param create_product_request: (required)
+        :type create_product_request: CreateProductRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: Product
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.create_product_with_http_info(create_product_request, **kwargs)  # noqa: E501
+
+    def create_product_with_http_info(self, create_product_request, **kwargs):  # noqa: E501
+        """Create Product  # noqa: E501
+
+        Creates a product and returns the new Product object.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_product_with_http_info(create_product_request, async_req=True)
+        >>> result = thread.get()
+
+        :param create_product_request: (required)
+        :type create_product_request: CreateProductRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(Product, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'create_product_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_product" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'create_product_request' is set
+        if self.api_client.client_side_validation and local_var_params.get('create_product_request') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `create_product_request` when calling `create_product`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_product_request' in local_var_params:
+            body_params = local_var_params['create_product_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "Product",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/products', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def create_product_listing_direct(self, create_listing_request, **kwargs):  # noqa: E501
+        """Create Product Listing  # noqa: E501
+
+        Creates a listing and returns the new ProductListing object. The request body is based on observed fields and may be incomplete.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_product_listing_direct(create_listing_request, async_req=True)
+        >>> result = thread.get()
+
+        :param create_listing_request: (required)
+        :type create_listing_request: CreateListingRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: ProductListing
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.create_product_listing_direct_with_http_info(create_listing_request, **kwargs)  # noqa: E501
+
+    def create_product_listing_direct_with_http_info(self, create_listing_request, **kwargs):  # noqa: E501
+        """Create Product Listing  # noqa: E501
+
+        Creates a listing and returns the new ProductListing object. The request body is based on observed fields and may be incomplete.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_product_listing_direct_with_http_info(create_listing_request, async_req=True)
+        >>> result = thread.get()
+
+        :param create_listing_request: (required)
+        :type create_listing_request: CreateListingRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(ProductListing, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'create_listing_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_product_listing_direct" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'create_listing_request' is set
+        if self.api_client.client_side_validation and local_var_params.get('create_listing_request') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `create_listing_request` when calling `create_product_listing_direct`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_listing_request' in local_var_params:
+            body_params = local_var_params['create_listing_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "ProductListing",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/listing', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def delete_product(self, product_id, **kwargs):  # noqa: E501
+        """Delete Product  # noqa: E501
+
+        Deletes a product.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_product(product_id, async_req=True)
+        >>> result = thread.get()
+
+        :param product_id: Must be a valid product ID. (required)
+        :type product_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: SuccessFlag
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.delete_product_with_http_info(product_id, **kwargs)  # noqa: E501
+
+    def delete_product_with_http_info(self, product_id, **kwargs):  # noqa: E501
+        """Delete Product  # noqa: E501
+
+        Deletes a product.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_product_with_http_info(product_id, async_req=True)
+        >>> result = thread.get()
+
+        :param product_id: Must be a valid product ID. (required)
+        :type product_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(SuccessFlag, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'product_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_product" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'product_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('product_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `product_id` when calling `delete_product`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'product_id' in local_var_params:
+            path_params['productId'] = local_var_params['product_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "SuccessFlag",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/products/{productId}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def delete_product_listing_direct(self, product_id, **kwargs):  # noqa: E501
+        """Delete Product Listing  # noqa: E501
+
+        Deletes a listing.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_product_listing_direct(product_id, async_req=True)
+        >>> result = thread.get()
+
+        :param product_id: Must be a valid product ID. (required)
+        :type product_id: str
+        :param hydrate: Populates some fields and changes types of others for certain objects.
+        :type hydrate: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: SuccessFlag
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.delete_product_listing_direct_with_http_info(product_id, **kwargs)  # noqa: E501
+
+    def delete_product_listing_direct_with_http_info(self, product_id, **kwargs):  # noqa: E501
+        """Delete Product Listing  # noqa: E501
+
+        Deletes a listing.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_product_listing_direct_with_http_info(product_id, async_req=True)
+        >>> result = thread.get()
+
+        :param product_id: Must be a valid product ID. (required)
+        :type product_id: str
+        :param hydrate: Populates some fields and changes types of others for certain objects.
+        :type hydrate: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(SuccessFlag, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'product_id',
+            'hydrate'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_product_listing_direct" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'product_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('product_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `product_id` when calling `delete_product_listing_direct`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'product_id' in local_var_params:
+            path_params['productId'] = local_var_params['product_id']  # noqa: E501
+
+        query_params = []
+        if local_var_params.get('hydrate') is not None:  # noqa: E501
+            query_params.append(('hydrate', local_var_params['hydrate']))  # noqa: E501
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "SuccessFlag",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/listing/{productId}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
     def get_active_licenses(self, **kwargs):  # noqa: E501
         """Get Active Licenses  # noqa: E501
 
@@ -703,16 +1278,24 @@ class EconomyApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def get_earnings_metrics(self, **kwargs):  # noqa: E501
+    def get_earnings_metrics(self, seller_id, **kwargs):  # noqa: E501
         """Get Earnings Metrics  # noqa: E501
 
         Gets earnings totals and breakdown metrics for the currently authenticated user.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_earnings_metrics(async_req=True)
+        >>> thread = api.get_earnings_metrics(seller_id, async_req=True)
         >>> result = thread.get()
 
+        :param seller_id: Seller to retrieve economy metrics for. (required)
+        :type seller_id: str
+        :param metric_date_start: Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+        :type metric_date_start: str
+        :param metric_date_end: Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+        :type metric_date_end: str
+        :param group_by_duration: Time bucket size for economy metrics. Observed values include `days` and `years`.
+        :type group_by_duration: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -729,18 +1312,26 @@ class EconomyApi(object):
         :rtype: EarningsMetrics
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_earnings_metrics_with_http_info(**kwargs)  # noqa: E501
+        return self.get_earnings_metrics_with_http_info(seller_id, **kwargs)  # noqa: E501
 
-    def get_earnings_metrics_with_http_info(self, **kwargs):  # noqa: E501
+    def get_earnings_metrics_with_http_info(self, seller_id, **kwargs):  # noqa: E501
         """Get Earnings Metrics  # noqa: E501
 
         Gets earnings totals and breakdown metrics for the currently authenticated user.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_earnings_metrics_with_http_info(async_req=True)
+        >>> thread = api.get_earnings_metrics_with_http_info(seller_id, async_req=True)
         >>> result = thread.get()
 
+        :param seller_id: Seller to retrieve economy metrics for. (required)
+        :type seller_id: str
+        :param metric_date_start: Lower bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+        :type metric_date_start: str
+        :param metric_date_end: Upper bound for economy metrics queries. Observed formats include both date-only and full ISO timestamps.
+        :type metric_date_end: str
+        :param group_by_duration: Time bucket size for economy metrics. Observed values include `days` and `years`.
+        :type group_by_duration: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -768,6 +1359,10 @@ class EconomyApi(object):
         local_var_params = locals()
 
         all_params = [
+            'seller_id',
+            'metric_date_start',
+            'metric_date_end',
+            'group_by_duration'
         ]
         all_params.extend(
             [
@@ -789,12 +1384,23 @@ class EconomyApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
+        # verify the required parameter 'seller_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('seller_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `seller_id` when calling `get_earnings_metrics`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
+        if local_var_params.get('metric_date_start') is not None:  # noqa: E501
+            query_params.append(('metricDateStart', local_var_params['metric_date_start']))  # noqa: E501
+        if local_var_params.get('metric_date_end') is not None:  # noqa: E501
+            query_params.append(('metricDateEnd', local_var_params['metric_date_end']))  # noqa: E501
+        if local_var_params.get('seller_id') is not None:  # noqa: E501
+            query_params.append(('sellerId', local_var_params['seller_id']))  # noqa: E501
+        if local_var_params.get('group_by_duration') is not None:  # noqa: E501
+            query_params.append(('groupByDuration', local_var_params['group_by_duration']))  # noqa: E501
 
         header_params = dict(local_var_params.get('_headers', {}))
 
@@ -954,6 +1560,420 @@ class EconomyApi(object):
 
         return self.api_client.call_api(
             '/user/{userId}/economy/account', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def get_economy_balances(self, user_id, **kwargs):  # noqa: E501
+        """Get Economy Balances  # noqa: E501
+
+        Gets the combined balances for a user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_economy_balances(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: EconomyBalances
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_economy_balances_with_http_info(user_id, **kwargs)  # noqa: E501
+
+    def get_economy_balances_with_http_info(self, user_id, **kwargs):  # noqa: E501
+        """Get Economy Balances  # noqa: E501
+
+        Gets the combined balances for a user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_economy_balances_with_http_info(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(EconomyBalances, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_economy_balances" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'user_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('user_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `get_economy_balances`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'user_id' in local_var_params:
+            path_params['userId'] = local_var_params['user_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "EconomyBalances",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/user/{userId}/economy/balances', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def get_economy_payout_status(self, user_id, **kwargs):  # noqa: E501
+        """Get Economy Payout Status  # noqa: E501
+
+        Gets the current payout status and eligibility information for a user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_economy_payout_status(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: EconomyPayoutStatus
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_economy_payout_status_with_http_info(user_id, **kwargs)  # noqa: E501
+
+    def get_economy_payout_status_with_http_info(self, user_id, **kwargs):  # noqa: E501
+        """Get Economy Payout Status  # noqa: E501
+
+        Gets the current payout status and eligibility information for a user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_economy_payout_status_with_http_info(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(EconomyPayoutStatus, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_economy_payout_status" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'user_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('user_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `get_economy_payout_status`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'user_id' in local_var_params:
+            path_params['userId'] = local_var_params['user_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "EconomyPayoutStatus",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/user/{userId}/economy/payouts/status', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def get_economy_payouts(self, user_id, **kwargs):  # noqa: E501
+        """Get Economy Payouts  # noqa: E501
+
+        Gets the payout history for a user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_economy_payouts(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: EconomyPayoutList
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_economy_payouts_with_http_info(user_id, **kwargs)  # noqa: E501
+
+    def get_economy_payouts_with_http_info(self, user_id, **kwargs):  # noqa: E501
+        """Get Economy Payouts  # noqa: E501
+
+        Gets the payout history for a user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_economy_payouts_with_http_info(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(EconomyPayoutList, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_economy_payouts" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'user_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('user_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `get_economy_payouts`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'user_id' in local_var_params:
+            path_params['userId'] = local_var_params['user_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "EconomyPayoutList",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/user/{userId}/economy/payouts/list', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1408,6 +2428,8 @@ class EconomyApi(object):
         :type offset: int
         :param hydrate: Populates some fields and changes types of others for certain objects.
         :type hydrate: bool
+        :param listing_type: Filter user listings by category. Observed values include `otp` and `subscription`.
+        :type listing_type: str
         :param group_id: Must be a valid group ID.
         :type group_id: str
         :param active: Filter for users' listings and inventory bundles.
@@ -1448,6 +2470,8 @@ class EconomyApi(object):
         :type offset: int
         :param hydrate: Populates some fields and changes types of others for certain objects.
         :type hydrate: bool
+        :param listing_type: Filter user listings by category. Observed values include `otp` and `subscription`.
+        :type listing_type: str
         :param group_id: Must be a valid group ID.
         :type group_id: str
         :param active: Filter for users' listings and inventory bundles.
@@ -1483,6 +2507,7 @@ class EconomyApi(object):
             'n',
             'offset',
             'hydrate',
+            'listing_type',
             'group_id',
             'active'
         ]
@@ -1529,6 +2554,8 @@ class EconomyApi(object):
             query_params.append(('offset', local_var_params['offset']))  # noqa: E501
         if local_var_params.get('hydrate') is not None:  # noqa: E501
             query_params.append(('hydrate', local_var_params['hydrate']))  # noqa: E501
+        if local_var_params.get('listing_type') is not None:  # noqa: E501
+            query_params.append(('listingType', local_var_params['listing_type']))  # noqa: E501
         if local_var_params.get('group_id') is not None:  # noqa: E501
             query_params.append(('groupId', local_var_params['group_id']))  # noqa: E501
         if local_var_params.get('active') is not None:  # noqa: E501
@@ -2048,6 +3075,8 @@ class EconomyApi(object):
 
         :param buyer_id: Must be a valid user ID. (required)
         :type buyer_id: str
+        :param seller_id: Filter results by seller.
+        :type seller_id: str
         :param n: The number of objects to return.
         :type n: int
         :param offset: A zero-based offset from the default object sorting from where search results start.
@@ -2088,6 +3117,8 @@ class EconomyApi(object):
 
         :param buyer_id: Must be a valid user ID. (required)
         :type buyer_id: str
+        :param seller_id: Filter results by seller.
+        :type seller_id: str
         :param n: The number of objects to return.
         :type n: int
         :param offset: A zero-based offset from the default object sorting from where search results start.
@@ -2126,6 +3157,7 @@ class EconomyApi(object):
 
         all_params = [
             'buyer_id',
+            'seller_id',
             'n',
             'offset',
             'most_recent',
@@ -2169,6 +3201,8 @@ class EconomyApi(object):
         query_params = []
         if local_var_params.get('buyer_id') is not None:  # noqa: E501
             query_params.append(('buyerId', local_var_params['buyer_id']))  # noqa: E501
+        if local_var_params.get('seller_id') is not None:  # noqa: E501
+            query_params.append(('sellerId', local_var_params['seller_id']))  # noqa: E501
         if local_var_params.get('n') is not None:  # noqa: E501
             query_params.append(('n', local_var_params['n']))  # noqa: E501
         if local_var_params.get('offset') is not None:  # noqa: E501
@@ -3856,6 +4890,464 @@ class EconomyApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
+    def get_user_tilia_kyc(self, user_id, **kwargs):  # noqa: E501
+        """Get User Tilia KYC  # noqa: E501
+
+        Gets KYC status details for a user's Tilia account.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_user_tilia_kyc(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: TiliaKyc
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_user_tilia_kyc_with_http_info(user_id, **kwargs)  # noqa: E501
+
+    def get_user_tilia_kyc_with_http_info(self, user_id, **kwargs):  # noqa: E501
+        """Get User Tilia KYC  # noqa: E501
+
+        Gets KYC status details for a user's Tilia account.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_user_tilia_kyc_with_http_info(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(TiliaKyc, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_tilia_kyc" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'user_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('user_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `get_user_tilia_kyc`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'user_id' in local_var_params:
+            path_params['userId'] = local_var_params['user_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "TiliaKyc",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/user/{userId}/tilia/kyc', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def list_stores(self, **kwargs):  # noqa: E501
+        """List Stores  # noqa: E501
+
+        Lists stores, optionally filtered to a seller and adjusted for management views.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_stores(async_req=True)
+        >>> result = thread.get()
+
+        :param seller_id: Filter results by seller.
+        :type seller_id: str
+        :param management_pov: Return stores from the seller management point of view.
+        :type management_pov: bool
+        :param n: The number of objects to return.
+        :type n: int
+        :param offset: A zero-based offset from the default object sorting from where search results start.
+        :type offset: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: list[Store]
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.list_stores_with_http_info(**kwargs)  # noqa: E501
+
+    def list_stores_with_http_info(self, **kwargs):  # noqa: E501
+        """List Stores  # noqa: E501
+
+        Lists stores, optionally filtered to a seller and adjusted for management views.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_stores_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param seller_id: Filter results by seller.
+        :type seller_id: str
+        :param management_pov: Return stores from the seller management point of view.
+        :type management_pov: bool
+        :param n: The number of objects to return.
+        :type n: int
+        :param offset: A zero-based offset from the default object sorting from where search results start.
+        :type offset: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(list[Store], status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'seller_id',
+            'management_pov',
+            'n',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_stores" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        if self.api_client.client_side_validation and 'n' in local_var_params and local_var_params['n'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `n` when calling `list_stores`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'n' in local_var_params and local_var_params['n'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `n` when calling `list_stores`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_stores`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if local_var_params.get('seller_id') is not None:  # noqa: E501
+            query_params.append(('sellerId', local_var_params['seller_id']))  # noqa: E501
+        if local_var_params.get('management_pov') is not None:  # noqa: E501
+            query_params.append(('managementPov', local_var_params['management_pov']))  # noqa: E501
+        if local_var_params.get('n') is not None:  # noqa: E501
+            query_params.append(('n', local_var_params['n']))  # noqa: E501
+        if local_var_params.get('offset') is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "list[Store]",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/economy/stores', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def list_user_products(self, user_id, **kwargs):  # noqa: E501
+        """List User Products  # noqa: E501
+
+        Gets the products of a given user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_user_products(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param n: The number of objects to return.
+        :type n: int
+        :param offset: A zero-based offset from the default object sorting from where search results start.
+        :type offset: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: list[Product]
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.list_user_products_with_http_info(user_id, **kwargs)  # noqa: E501
+
+    def list_user_products_with_http_info(self, user_id, **kwargs):  # noqa: E501
+        """List User Products  # noqa: E501
+
+        Gets the products of a given user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_user_products_with_http_info(user_id, async_req=True)
+        >>> result = thread.get()
+
+        :param user_id: Must be a valid user ID. (required)
+        :type user_id: str
+        :param n: The number of objects to return.
+        :type n: int
+        :param offset: A zero-based offset from the default object sorting from where search results start.
+        :type offset: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(list[Product], status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'user_id',
+            'n',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_user_products" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'user_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('user_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `list_user_products`")  # noqa: E501
+
+        if self.api_client.client_side_validation and 'n' in local_var_params and local_var_params['n'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `n` when calling `list_user_products`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'n' in local_var_params and local_var_params['n'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `n` when calling `list_user_products`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_user_products`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'user_id' in local_var_params:
+            path_params['userId'] = local_var_params['user_id']  # noqa: E501
+
+        query_params = []
+        if local_var_params.get('n') is not None:  # noqa: E501
+            query_params.append(('n', local_var_params['n']))  # noqa: E501
+        if local_var_params.get('offset') is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "list[Product]",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/user/{userId}/products', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
     def purchase_product_listing(self, **kwargs):  # noqa: E501
         """Purchase Product Listing  # noqa: E501
 
@@ -3984,6 +5476,325 @@ class EconomyApi(object):
 
         return self.api_client.call_api(
             '/economy/purchase/listing', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def update_product(self, product_id, update_product_request, **kwargs):  # noqa: E501
+        """Update Product  # noqa: E501
+
+        Updates a product and returns the updated Product object.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_product(product_id, update_product_request, async_req=True)
+        >>> result = thread.get()
+
+        :param product_id: Must be a valid product ID. (required)
+        :type product_id: str
+        :param update_product_request: (required)
+        :type update_product_request: UpdateProductRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: Product
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.update_product_with_http_info(product_id, update_product_request, **kwargs)  # noqa: E501
+
+    def update_product_with_http_info(self, product_id, update_product_request, **kwargs):  # noqa: E501
+        """Update Product  # noqa: E501
+
+        Updates a product and returns the updated Product object.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_product_with_http_info(product_id, update_product_request, async_req=True)
+        >>> result = thread.get()
+
+        :param product_id: Must be a valid product ID. (required)
+        :type product_id: str
+        :param update_product_request: (required)
+        :type update_product_request: UpdateProductRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(Product, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'product_id',
+            'update_product_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_product" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'product_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('product_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `product_id` when calling `update_product`")  # noqa: E501
+        # verify the required parameter 'update_product_request' is set
+        if self.api_client.client_side_validation and local_var_params.get('update_product_request') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `update_product_request` when calling `update_product`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'product_id' in local_var_params:
+            path_params['productId'] = local_var_params['product_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'update_product_request' in local_var_params:
+            body_params = local_var_params['update_product_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'PUT', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "Product",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/products/{productId}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_types_map=response_types_map,
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
+
+    def update_product_listing_direct(self, product_id, update_listing_request, **kwargs):  # noqa: E501
+        """Update Product Listing  # noqa: E501
+
+        Updates the active state of a listing. Setting `active` to `true` publishes the listing, while `false` unpublishes it.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_product_listing_direct(product_id, update_listing_request, async_req=True)
+        >>> result = thread.get()
+
+        :param product_id: Must be a valid product ID. (required)
+        :type product_id: str
+        :param update_listing_request: (required)
+        :type update_listing_request: UpdateListingRequest
+        :param hydrate: Populates some fields and changes types of others for certain objects.
+        :type hydrate: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: ProductListing
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.update_product_listing_direct_with_http_info(product_id, update_listing_request, **kwargs)  # noqa: E501
+
+    def update_product_listing_direct_with_http_info(self, product_id, update_listing_request, **kwargs):  # noqa: E501
+        """Update Product Listing  # noqa: E501
+
+        Updates the active state of a listing. Setting `active` to `true` publishes the listing, while `false` unpublishes it.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_product_listing_direct_with_http_info(product_id, update_listing_request, async_req=True)
+        >>> result = thread.get()
+
+        :param product_id: Must be a valid product ID. (required)
+        :type product_id: str
+        :param update_listing_request: (required)
+        :type update_listing_request: UpdateListingRequest
+        :param hydrate: Populates some fields and changes types of others for certain objects.
+        :type hydrate: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :type _return_http_data_only: bool, optional
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :type _preload_content: bool, optional
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :type _content_type: string, optional: force content-type for the request
+        :return: Returns the result object.
+                 If the method is called asynchronously,
+                 returns the request thread.
+        :rtype: tuple(ProductListing, status_code(int), headers(HTTPHeaderDict))
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'product_id',
+            'update_listing_request',
+            'hydrate'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth',
+                '_content_type',
+                '_headers'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_product_listing_direct" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'product_id' is set
+        if self.api_client.client_side_validation and local_var_params.get('product_id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `product_id` when calling `update_product_listing_direct`")  # noqa: E501
+        # verify the required parameter 'update_listing_request' is set
+        if self.api_client.client_side_validation and local_var_params.get('update_listing_request') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `update_listing_request` when calling `update_product_listing_direct`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'product_id' in local_var_params:
+            path_params['productId'] = local_var_params['product_id']  # noqa: E501
+
+        query_params = []
+        if local_var_params.get('hydrate') is not None:  # noqa: E501
+            query_params.append(('hydrate', local_var_params['hydrate']))  # noqa: E501
+
+        header_params = dict(local_var_params.get('_headers', {}))
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'update_listing_request' in local_var_params:
+            body_params = local_var_params['update_listing_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'PUT', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
+
+        # Authentication setting
+        auth_settings = ['authCookie']  # noqa: E501
+
+        response_types_map = {
+            200: "ProductListing",
+            401: "Error",
+        }
+
+        return self.api_client.call_api(
+            '/listing/{productId}', 'PUT',
             path_params,
             query_params,
             header_params,

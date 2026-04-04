@@ -37,7 +37,9 @@ class ProductListing(object):
     """
     openapi_types = {
         'active': 'bool',
+        'archived': 'bool',
         'buyer_refundable': 'bool',
+        'created': 'datetime',
         'description': 'str',
         'display_name': 'str',
         'duration': 'int',
@@ -58,6 +60,8 @@ class ProductListing(object):
         'product_ids': 'list[str]',
         'product_type': 'ProductType',
         'products': 'list[object]',
+        'purchase_count': 'int',
+        'purchase_count_quantity': 'int',
         'quantifiable': 'bool',
         'recurrable': 'bool',
         'refundable': 'bool',
@@ -68,13 +72,16 @@ class ProductListing(object):
         'store_ids': 'list[str]',
         'subtitle': 'str',
         'tags': 'list[str]',
+        'updated': 'datetime',
         'vrc_plus_discount_price': 'int',
         'when_to_expire': 'datetime'
     }
 
     attribute_map = {
         'active': 'active',
+        'archived': 'archived',
         'buyer_refundable': 'buyerRefundable',
+        'created': 'created',
         'description': 'description',
         'display_name': 'displayName',
         'duration': 'duration',
@@ -95,6 +102,8 @@ class ProductListing(object):
         'product_ids': 'productIds',
         'product_type': 'productType',
         'products': 'products',
+        'purchase_count': 'purchaseCount',
+        'purchase_count_quantity': 'purchaseCountQuantity',
         'quantifiable': 'quantifiable',
         'recurrable': 'recurrable',
         'refundable': 'refundable',
@@ -105,18 +114,21 @@ class ProductListing(object):
         'store_ids': 'storeIds',
         'subtitle': 'subtitle',
         'tags': 'tags',
+        'updated': 'updated',
         'vrc_plus_discount_price': 'vrcPlusDiscountPrice',
         'when_to_expire': 'whenToExpire'
     }
 
-    def __init__(self, active=None, buyer_refundable=None, description=None, display_name=None, duration=None, duration_type=None, group_icon=None, group_id=None, group_name=None, has_avatar=None, has_udon=None, hydrated_products=None, id=None, image_id=None, image_url=None, listing_type=None, listing_variants=None, permanent=None, price_tokens=None, product_ids=None, product_type=None, products=None, quantifiable=None, recurrable=None, refundable=None, seller_display_name=None, seller_id=None, sold_by_vrc=None, stackable=None, store_ids=None, subtitle=None, tags=None, vrc_plus_discount_price=None, when_to_expire=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, active=None, archived=None, buyer_refundable=None, created=None, description=None, display_name=None, duration=None, duration_type=None, group_icon=None, group_id=None, group_name=None, has_avatar=None, has_udon=None, hydrated_products=None, id=None, image_id=None, image_url=None, listing_type=None, listing_variants=None, permanent=None, price_tokens=None, product_ids=None, product_type=None, products=None, purchase_count=None, purchase_count_quantity=None, quantifiable=None, recurrable=None, refundable=None, seller_display_name=None, seller_id=None, sold_by_vrc=None, stackable=None, store_ids=None, subtitle=None, tags=None, updated=None, vrc_plus_discount_price=None, when_to_expire=None, local_vars_configuration=None):  # noqa: E501
         """ProductListing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._active = None
+        self._archived = None
         self._buyer_refundable = None
+        self._created = None
         self._description = None
         self._display_name = None
         self._duration = None
@@ -137,6 +149,8 @@ class ProductListing(object):
         self._product_ids = None
         self._product_type = None
         self._products = None
+        self._purchase_count = None
+        self._purchase_count_quantity = None
         self._quantifiable = None
         self._recurrable = None
         self._refundable = None
@@ -147,12 +161,17 @@ class ProductListing(object):
         self._store_ids = None
         self._subtitle = None
         self._tags = None
+        self._updated = None
         self._vrc_plus_discount_price = None
         self._when_to_expire = None
         self.discriminator = None
 
         self.active = active
+        if archived is not None:
+            self.archived = archived
         self.buyer_refundable = buyer_refundable
+        if created is not None:
+            self.created = created
         self.description = description
         self.display_name = display_name
         self.duration = duration
@@ -179,6 +198,10 @@ class ProductListing(object):
         self.product_ids = product_ids
         self.product_type = product_type
         self.products = products
+        if purchase_count is not None:
+            self.purchase_count = purchase_count
+        if purchase_count_quantity is not None:
+            self.purchase_count_quantity = purchase_count_quantity
         if quantifiable is not None:
             self.quantifiable = quantifiable
         self.recurrable = recurrable
@@ -193,6 +216,8 @@ class ProductListing(object):
             self.subtitle = subtitle
         if tags is not None:
             self.tags = tags
+        if updated is not None:
+            self.updated = updated
         if vrc_plus_discount_price is not None:
             self.vrc_plus_discount_price = vrc_plus_discount_price
         self.when_to_expire = when_to_expire
@@ -221,6 +246,27 @@ class ProductListing(object):
         self._active = active
 
     @property
+    def archived(self):
+        """Gets the archived of this ProductListing.  # noqa: E501
+
+
+        :return: The archived of this ProductListing.  # noqa: E501
+        :rtype: bool
+        """
+        return self._archived
+
+    @archived.setter
+    def archived(self, archived):
+        """Sets the archived of this ProductListing.
+
+
+        :param archived: The archived of this ProductListing.  # noqa: E501
+        :type archived: bool
+        """
+
+        self._archived = archived
+
+    @property
     def buyer_refundable(self):
         """Gets the buyer_refundable of this ProductListing.  # noqa: E501
 
@@ -242,6 +288,27 @@ class ProductListing(object):
             raise ValueError("Invalid value for `buyer_refundable`, must not be `None`")  # noqa: E501
 
         self._buyer_refundable = buyer_refundable
+
+    @property
+    def created(self):
+        """Gets the created of this ProductListing.  # noqa: E501
+
+
+        :return: The created of this ProductListing.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        """Sets the created of this ProductListing.
+
+
+        :param created: The created of this ProductListing.  # noqa: E501
+        :type created: datetime
+        """
+
+        self._created = created
 
     @property
     def description(self):
@@ -684,6 +751,48 @@ class ProductListing(object):
         self._products = products
 
     @property
+    def purchase_count(self):
+        """Gets the purchase_count of this ProductListing.  # noqa: E501
+
+
+        :return: The purchase_count of this ProductListing.  # noqa: E501
+        :rtype: int
+        """
+        return self._purchase_count
+
+    @purchase_count.setter
+    def purchase_count(self, purchase_count):
+        """Sets the purchase_count of this ProductListing.
+
+
+        :param purchase_count: The purchase_count of this ProductListing.  # noqa: E501
+        :type purchase_count: int
+        """
+
+        self._purchase_count = purchase_count
+
+    @property
+    def purchase_count_quantity(self):
+        """Gets the purchase_count_quantity of this ProductListing.  # noqa: E501
+
+
+        :return: The purchase_count_quantity of this ProductListing.  # noqa: E501
+        :rtype: int
+        """
+        return self._purchase_count_quantity
+
+    @purchase_count_quantity.setter
+    def purchase_count_quantity(self, purchase_count_quantity):
+        """Sets the purchase_count_quantity of this ProductListing.
+
+
+        :param purchase_count_quantity: The purchase_count_quantity of this ProductListing.  # noqa: E501
+        :type purchase_count_quantity: int
+        """
+
+        self._purchase_count_quantity = purchase_count_quantity
+
+    @property
     def quantifiable(self):
         """Gets the quantifiable of this ProductListing.  # noqa: E501
 
@@ -904,6 +1013,27 @@ class ProductListing(object):
         """
 
         self._tags = tags
+
+    @property
+    def updated(self):
+        """Gets the updated of this ProductListing.  # noqa: E501
+
+
+        :return: The updated of this ProductListing.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated
+
+    @updated.setter
+    def updated(self, updated):
+        """Sets the updated of this ProductListing.
+
+
+        :param updated: The updated of this ProductListing.  # noqa: E501
+        :type updated: datetime
+        """
+
+        self._updated = updated
 
     @property
     def vrc_plus_discount_price(self):

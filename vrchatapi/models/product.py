@@ -46,8 +46,12 @@ class Product(object):
         'group_role_id': 'str',
         'id': 'str',
         'image_id': 'str',
+        'image_url': 'str',
         'parent_listings': 'list[str]',
         'product_type': 'ProductType',
+        'product_type_label': 'str',
+        'purchase_count': 'int',
+        'purchase_count_quantity': 'int',
         'seller_display_name': 'str',
         'seller_id': 'str',
         'tags': 'list[str]',
@@ -66,8 +70,12 @@ class Product(object):
         'group_role_id': 'groupRoleId',
         'id': 'id',
         'image_id': 'imageId',
+        'image_url': 'imageUrl',
         'parent_listings': 'parentListings',
         'product_type': 'productType',
+        'product_type_label': 'productTypeLabel',
+        'purchase_count': 'purchaseCount',
+        'purchase_count_quantity': 'purchaseCountQuantity',
         'seller_display_name': 'sellerDisplayName',
         'seller_id': 'sellerId',
         'tags': 'tags',
@@ -75,7 +83,7 @@ class Product(object):
         'use_for_subscriber_list': 'useForSubscriberList'
     }
 
-    def __init__(self, archived=None, created=None, description=None, display_name=None, group_access=False, group_access_remove=False, group_id=None, group_role_id=None, id=None, image_id=None, parent_listings=None, product_type=None, seller_display_name=None, seller_id=None, tags=None, updated=None, use_for_subscriber_list=False, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, archived=None, created=None, description=None, display_name=None, group_access=False, group_access_remove=False, group_id=None, group_role_id=None, id=None, image_id=None, image_url=None, parent_listings=None, product_type=None, product_type_label=None, purchase_count=None, purchase_count_quantity=None, seller_display_name=None, seller_id=None, tags=None, updated=None, use_for_subscriber_list=False, local_vars_configuration=None):  # noqa: E501
         """Product - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -91,8 +99,12 @@ class Product(object):
         self._group_role_id = None
         self._id = None
         self._image_id = None
+        self._image_url = None
         self._parent_listings = None
         self._product_type = None
+        self._product_type_label = None
+        self._purchase_count = None
+        self._purchase_count_quantity = None
         self._seller_display_name = None
         self._seller_id = None
         self._tags = None
@@ -116,8 +128,15 @@ class Product(object):
             self.group_role_id = group_role_id
         self.id = id
         self.image_id = image_id
+        self.image_url = image_url
         self.parent_listings = parent_listings
         self.product_type = product_type
+        if product_type_label is not None:
+            self.product_type_label = product_type_label
+        if purchase_count is not None:
+            self.purchase_count = purchase_count
+        if purchase_count_quantity is not None:
+            self.purchase_count_quantity = purchase_count_quantity
         self.seller_display_name = seller_display_name
         self.seller_id = seller_id
         self.tags = tags
@@ -344,6 +363,27 @@ class Product(object):
         self._image_id = image_id
 
     @property
+    def image_url(self):
+        """Gets the image_url of this Product.  # noqa: E501
+
+
+        :return: The image_url of this Product.  # noqa: E501
+        :rtype: str
+        """
+        return self._image_url
+
+    @image_url.setter
+    def image_url(self, image_url):
+        """Sets the image_url of this Product.
+
+
+        :param image_url: The image_url of this Product.  # noqa: E501
+        :type image_url: str
+        """
+
+        self._image_url = image_url
+
+    @property
     def parent_listings(self):
         """Gets the parent_listings of this Product.  # noqa: E501
 
@@ -388,6 +428,69 @@ class Product(object):
             raise ValueError("Invalid value for `product_type`, must not be `None`")  # noqa: E501
 
         self._product_type = product_type
+
+    @property
+    def product_type_label(self):
+        """Gets the product_type_label of this Product.  # noqa: E501
+
+
+        :return: The product_type_label of this Product.  # noqa: E501
+        :rtype: str
+        """
+        return self._product_type_label
+
+    @product_type_label.setter
+    def product_type_label(self, product_type_label):
+        """Sets the product_type_label of this Product.
+
+
+        :param product_type_label: The product_type_label of this Product.  # noqa: E501
+        :type product_type_label: str
+        """
+
+        self._product_type_label = product_type_label
+
+    @property
+    def purchase_count(self):
+        """Gets the purchase_count of this Product.  # noqa: E501
+
+
+        :return: The purchase_count of this Product.  # noqa: E501
+        :rtype: int
+        """
+        return self._purchase_count
+
+    @purchase_count.setter
+    def purchase_count(self, purchase_count):
+        """Sets the purchase_count of this Product.
+
+
+        :param purchase_count: The purchase_count of this Product.  # noqa: E501
+        :type purchase_count: int
+        """
+
+        self._purchase_count = purchase_count
+
+    @property
+    def purchase_count_quantity(self):
+        """Gets the purchase_count_quantity of this Product.  # noqa: E501
+
+
+        :return: The purchase_count_quantity of this Product.  # noqa: E501
+        :rtype: int
+        """
+        return self._purchase_count_quantity
+
+    @purchase_count_quantity.setter
+    def purchase_count_quantity(self, purchase_count_quantity):
+        """Sets the purchase_count_quantity of this Product.
+
+
+        :param purchase_count_quantity: The purchase_count_quantity of this Product.  # noqa: E501
+        :type purchase_count_quantity: int
+        """
+
+        self._purchase_count_quantity = purchase_count_quantity
 
     @property
     def seller_display_name(self):

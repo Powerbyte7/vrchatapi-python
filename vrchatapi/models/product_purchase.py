@@ -43,13 +43,15 @@ class ProductPurchase(object):
         'is_gift': 'bool',
         'is_receiver': 'bool',
         'is_seller': 'bool',
+        'ledger_transaction_id': 'int',
         'listing_currently_available': 'bool',
+        'listing_description': 'str',
         'listing_display_name': 'str',
         'listing_id': 'str',
         'listing_image_id': 'str',
         'listing_subtitle': 'str',
         'listing_type': 'ProductListingType',
-        'products': 'list[object]',
+        'products': 'list[ProductPurchaseProduct]',
         'purchase_active': 'bool',
         'purchase_context': 'ProductPurchasePurchaseContext',
         'purchase_current_status': 'str',
@@ -57,6 +59,7 @@ class ProductPurchase(object):
         'purchase_duration': 'int',
         'purchase_duration_type': 'str',
         'purchase_end_date': 'datetime',
+        'purchase_fee': 'int',
         'purchase_id': 'str',
         'purchase_latest': 'bool',
         'purchase_price': 'int',
@@ -65,6 +68,7 @@ class ProductPurchase(object):
         'purchase_token': 'object',
         'purchase_type': 'str',
         'purchase_unit_price': 'int',
+        'purchase_value': 'int',
         'receiver_display_name': 'str',
         'receiver_id': 'str',
         'recurrable': 'bool',
@@ -83,7 +87,9 @@ class ProductPurchase(object):
         'is_gift': 'isGift',
         'is_receiver': 'isReceiver',
         'is_seller': 'isSeller',
+        'ledger_transaction_id': 'ledgerTransactionId',
         'listing_currently_available': 'listingCurrentlyAvailable',
+        'listing_description': 'listingDescription',
         'listing_display_name': 'listingDisplayName',
         'listing_id': 'listingId',
         'listing_image_id': 'listingImageId',
@@ -97,6 +103,7 @@ class ProductPurchase(object):
         'purchase_duration': 'purchaseDuration',
         'purchase_duration_type': 'purchaseDurationType',
         'purchase_end_date': 'purchaseEndDate',
+        'purchase_fee': 'purchaseFee',
         'purchase_id': 'purchaseId',
         'purchase_latest': 'purchaseLatest',
         'purchase_price': 'purchasePrice',
@@ -105,6 +112,7 @@ class ProductPurchase(object):
         'purchase_token': 'purchaseToken',
         'purchase_type': 'purchaseType',
         'purchase_unit_price': 'purchaseUnitPrice',
+        'purchase_value': 'purchaseValue',
         'receiver_display_name': 'receiverDisplayName',
         'receiver_id': 'receiverId',
         'recurrable': 'recurrable',
@@ -115,7 +123,7 @@ class ProductPurchase(object):
         'will_recur': 'willRecur'
     }
 
-    def __init__(self, buyer_display_name=None, buyer_id=None, first_party=None, is_buyer=None, is_gift=None, is_receiver=None, is_seller=None, listing_currently_available=None, listing_display_name=None, listing_id=None, listing_image_id=None, listing_subtitle=None, listing_type=None, products=None, purchase_active=None, purchase_context=None, purchase_current_status=None, purchase_date=None, purchase_duration=None, purchase_duration_type=None, purchase_end_date=None, purchase_id=None, purchase_latest=None, purchase_price=None, purchase_quantity=None, purchase_start_date=None, purchase_token=None, purchase_type=None, purchase_unit_price=None, receiver_display_name=None, receiver_id=None, recurrable=None, refundable=None, seller_display_name=None, seller_id=None, stackable=None, will_recur=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, buyer_display_name=None, buyer_id=None, first_party=None, is_buyer=None, is_gift=None, is_receiver=None, is_seller=None, ledger_transaction_id=None, listing_currently_available=None, listing_description=None, listing_display_name=None, listing_id=None, listing_image_id=None, listing_subtitle=None, listing_type=None, products=None, purchase_active=None, purchase_context=None, purchase_current_status=None, purchase_date=None, purchase_duration=None, purchase_duration_type=None, purchase_end_date=None, purchase_fee=None, purchase_id=None, purchase_latest=None, purchase_price=None, purchase_quantity=None, purchase_start_date=None, purchase_token=None, purchase_type=None, purchase_unit_price=None, purchase_value=None, receiver_display_name=None, receiver_id=None, recurrable=None, refundable=None, seller_display_name=None, seller_id=None, stackable=None, will_recur=None, local_vars_configuration=None):  # noqa: E501
         """ProductPurchase - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -128,7 +136,9 @@ class ProductPurchase(object):
         self._is_gift = None
         self._is_receiver = None
         self._is_seller = None
+        self._ledger_transaction_id = None
         self._listing_currently_available = None
+        self._listing_description = None
         self._listing_display_name = None
         self._listing_id = None
         self._listing_image_id = None
@@ -142,6 +152,7 @@ class ProductPurchase(object):
         self._purchase_duration = None
         self._purchase_duration_type = None
         self._purchase_end_date = None
+        self._purchase_fee = None
         self._purchase_id = None
         self._purchase_latest = None
         self._purchase_price = None
@@ -150,6 +161,7 @@ class ProductPurchase(object):
         self._purchase_token = None
         self._purchase_type = None
         self._purchase_unit_price = None
+        self._purchase_value = None
         self._receiver_display_name = None
         self._receiver_id = None
         self._recurrable = None
@@ -168,7 +180,11 @@ class ProductPurchase(object):
         self.is_gift = is_gift
         self.is_receiver = is_receiver
         self.is_seller = is_seller
+        if ledger_transaction_id is not None:
+            self.ledger_transaction_id = ledger_transaction_id
         self.listing_currently_available = listing_currently_available
+        if listing_description is not None:
+            self.listing_description = listing_description
         self.listing_display_name = listing_display_name
         self.listing_id = listing_id
         self.listing_image_id = listing_image_id
@@ -184,6 +200,8 @@ class ProductPurchase(object):
         if purchase_duration_type is not None:
             self.purchase_duration_type = purchase_duration_type
         self.purchase_end_date = purchase_end_date
+        if purchase_fee is not None:
+            self.purchase_fee = purchase_fee
         self.purchase_id = purchase_id
         self.purchase_latest = purchase_latest
         self.purchase_price = purchase_price
@@ -192,6 +210,8 @@ class ProductPurchase(object):
         self.purchase_token = purchase_token
         self.purchase_type = purchase_type
         self.purchase_unit_price = purchase_unit_price
+        if purchase_value is not None:
+            self.purchase_value = purchase_value
         self.receiver_display_name = receiver_display_name
         self.receiver_id = receiver_id
         self.recurrable = recurrable
@@ -363,6 +383,27 @@ class ProductPurchase(object):
         self._is_seller = is_seller
 
     @property
+    def ledger_transaction_id(self):
+        """Gets the ledger_transaction_id of this ProductPurchase.  # noqa: E501
+
+
+        :return: The ledger_transaction_id of this ProductPurchase.  # noqa: E501
+        :rtype: int
+        """
+        return self._ledger_transaction_id
+
+    @ledger_transaction_id.setter
+    def ledger_transaction_id(self, ledger_transaction_id):
+        """Sets the ledger_transaction_id of this ProductPurchase.
+
+
+        :param ledger_transaction_id: The ledger_transaction_id of this ProductPurchase.  # noqa: E501
+        :type ledger_transaction_id: int
+        """
+
+        self._ledger_transaction_id = ledger_transaction_id
+
+    @property
     def listing_currently_available(self):
         """Gets the listing_currently_available of this ProductPurchase.  # noqa: E501
 
@@ -384,6 +425,27 @@ class ProductPurchase(object):
             raise ValueError("Invalid value for `listing_currently_available`, must not be `None`")  # noqa: E501
 
         self._listing_currently_available = listing_currently_available
+
+    @property
+    def listing_description(self):
+        """Gets the listing_description of this ProductPurchase.  # noqa: E501
+
+
+        :return: The listing_description of this ProductPurchase.  # noqa: E501
+        :rtype: str
+        """
+        return self._listing_description
+
+    @listing_description.setter
+    def listing_description(self, listing_description):
+        """Sets the listing_description of this ProductPurchase.
+
+
+        :param listing_description: The listing_description of this ProductPurchase.  # noqa: E501
+        :type listing_description: str
+        """
+
+        self._listing_description = listing_description
 
     @property
     def listing_display_name(self):
@@ -506,7 +568,7 @@ class ProductPurchase(object):
 
 
         :return: The products of this ProductPurchase.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[ProductPurchaseProduct]
         """
         return self._products
 
@@ -516,7 +578,7 @@ class ProductPurchase(object):
 
 
         :param products: The products of this ProductPurchase.  # noqa: E501
-        :type products: list[object]
+        :type products: list[ProductPurchaseProduct]
         """
         if self.local_vars_configuration.client_side_validation and products is None:  # noqa: E501
             raise ValueError("Invalid value for `products`, must not be `None`")  # noqa: E501
@@ -675,10 +737,29 @@ class ProductPurchase(object):
         :param purchase_end_date: The purchase_end_date of this ProductPurchase.  # noqa: E501
         :type purchase_end_date: datetime
         """
-        if self.local_vars_configuration.client_side_validation and purchase_end_date is None:  # noqa: E501
-            raise ValueError("Invalid value for `purchase_end_date`, must not be `None`")  # noqa: E501
 
         self._purchase_end_date = purchase_end_date
+
+    @property
+    def purchase_fee(self):
+        """Gets the purchase_fee of this ProductPurchase.  # noqa: E501
+
+
+        :return: The purchase_fee of this ProductPurchase.  # noqa: E501
+        :rtype: int
+        """
+        return self._purchase_fee
+
+    @purchase_fee.setter
+    def purchase_fee(self, purchase_fee):
+        """Sets the purchase_fee of this ProductPurchase.
+
+
+        :param purchase_fee: The purchase_fee of this ProductPurchase.  # noqa: E501
+        :type purchase_fee: int
+        """
+
+        self._purchase_fee = purchase_fee
 
     @property
     def purchase_id(self):
@@ -790,8 +871,6 @@ class ProductPurchase(object):
         :param purchase_start_date: The purchase_start_date of this ProductPurchase.  # noqa: E501
         :type purchase_start_date: datetime
         """
-        if self.local_vars_configuration.client_side_validation and purchase_start_date is None:  # noqa: E501
-            raise ValueError("Invalid value for `purchase_start_date`, must not be `None`")  # noqa: E501
 
         self._purchase_start_date = purchase_start_date
 
@@ -861,6 +940,27 @@ class ProductPurchase(object):
             raise ValueError("Invalid value for `purchase_unit_price`, must not be `None`")  # noqa: E501
 
         self._purchase_unit_price = purchase_unit_price
+
+    @property
+    def purchase_value(self):
+        """Gets the purchase_value of this ProductPurchase.  # noqa: E501
+
+
+        :return: The purchase_value of this ProductPurchase.  # noqa: E501
+        :rtype: int
+        """
+        return self._purchase_value
+
+    @purchase_value.setter
+    def purchase_value(self, purchase_value):
+        """Sets the purchase_value of this ProductPurchase.
+
+
+        :param purchase_value: The purchase_value of this ProductPurchase.  # noqa: E501
+        :type purchase_value: int
+        """
+
+        self._purchase_value = purchase_value
 
     @property
     def receiver_display_name(self):
