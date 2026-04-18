@@ -41,6 +41,7 @@ class GroupPermissions(object):
     group_galleries_manage = "group-galleries-manage"
     group_instance_age_gated_create = "group-instance-age-gated-create"
     group_instance_announcement_create = "group-instance-announcement-create"
+    group_instance_bypass_avatar_performance = "group-instance-bypass-avatar-performance"
     group_instance_calendar_link = "group-instance-calendar-link"
     group_instance_join = "group-instance-join"
     group_instance_manage = "group-instance-manage"
@@ -59,7 +60,7 @@ class GroupPermissions(object):
     group_roles_assign = "group-roles-assign"
     group_roles_manage = "group-roles-manage"
 
-    allowable_values = [group_all, group_announcement_manage, group_audit_view, group_bans_manage, group_calendar_manage, group_data_manage, group_default_role_manage, group_galleries_manage, group_instance_age_gated_create, group_instance_announcement_create, group_instance_calendar_link, group_instance_join, group_instance_manage, group_instance_moderate, group_instance_open_create, group_instance_plus_create, group_instance_plus_portal, group_instance_plus_portal_unlocked, group_instance_public_create, group_instance_queue_priority, group_instance_restricted_create, group_invites_manage, group_members_manage, group_members_remove, group_members_viewall, group_roles_assign, group_roles_manage]  # noqa: E501
+    allowable_values = [group_all, group_announcement_manage, group_audit_view, group_bans_manage, group_calendar_manage, group_data_manage, group_default_role_manage, group_galleries_manage, group_instance_age_gated_create, group_instance_announcement_create, group_instance_bypass_avatar_performance, group_instance_calendar_link, group_instance_join, group_instance_manage, group_instance_moderate, group_instance_open_create, group_instance_plus_create, group_instance_plus_portal, group_instance_plus_portal_unlocked, group_instance_public_create, group_instance_queue_priority, group_instance_restricted_create, group_invites_manage, group_members_manage, group_members_remove, group_members_viewall, group_roles_assign, group_roles_manage]  # noqa: E501
 
     """
     Attributes:
