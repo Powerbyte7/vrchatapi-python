@@ -48,6 +48,7 @@ class UpdateCalendarEventRequest(object):
         'languages': 'list[str]',
         'parent_id': 'str',
         'platforms': 'list[str]',
+        'recurrence': 'CalendarEventRecurrence',
         'role_ids': 'list[str]',
         'send_creation_notification': 'bool',
         'starts_at': 'datetime',
@@ -69,6 +70,7 @@ class UpdateCalendarEventRequest(object):
         'languages': 'languages',
         'parent_id': 'parentId',
         'platforms': 'platforms',
+        'recurrence': 'recurrence',
         'role_ids': 'roleIds',
         'send_creation_notification': 'sendCreationNotification',
         'starts_at': 'startsAt',
@@ -77,7 +79,7 @@ class UpdateCalendarEventRequest(object):
         'uses_instance_overflow': 'usesInstanceOverflow'
     }
 
-    def __init__(self, category=None, close_instance_after_end_minutes=None, description=None, ends_at=None, featured=None, guest_early_join_minutes=None, host_early_join_minutes=None, image_id=None, is_draft=None, languages=None, parent_id=None, platforms=None, role_ids=None, send_creation_notification=False, starts_at=None, tags=None, title=None, uses_instance_overflow=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, category=None, close_instance_after_end_minutes=None, description=None, ends_at=None, featured=None, guest_early_join_minutes=None, host_early_join_minutes=None, image_id=None, is_draft=None, languages=None, parent_id=None, platforms=None, recurrence=None, role_ids=None, send_creation_notification=False, starts_at=None, tags=None, title=None, uses_instance_overflow=None, local_vars_configuration=None):  # noqa: E501
         """UpdateCalendarEventRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -95,6 +97,7 @@ class UpdateCalendarEventRequest(object):
         self._languages = None
         self._parent_id = None
         self._platforms = None
+        self._recurrence = None
         self._role_ids = None
         self._send_creation_notification = None
         self._starts_at = None
@@ -127,6 +130,7 @@ class UpdateCalendarEventRequest(object):
             self.parent_id = parent_id
         if platforms is not None:
             self.platforms = platforms
+        self.recurrence = recurrence
         if role_ids is not None:
             self.role_ids = role_ids
         if send_creation_notification is not None:
@@ -396,6 +400,27 @@ class UpdateCalendarEventRequest(object):
         """
 
         self._platforms = platforms
+
+    @property
+    def recurrence(self):
+        """Gets the recurrence of this UpdateCalendarEventRequest.  # noqa: E501
+
+
+        :return: The recurrence of this UpdateCalendarEventRequest.  # noqa: E501
+        :rtype: CalendarEventRecurrence
+        """
+        return self._recurrence
+
+    @recurrence.setter
+    def recurrence(self, recurrence):
+        """Sets the recurrence of this UpdateCalendarEventRequest.
+
+
+        :param recurrence: The recurrence of this UpdateCalendarEventRequest.  # noqa: E501
+        :type recurrence: CalendarEventRecurrence
+        """
+
+        self._recurrence = recurrence
 
     @property
     def role_ids(self):

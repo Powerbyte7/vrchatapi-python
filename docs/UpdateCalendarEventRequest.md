@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **languages** | **list[str]** |  | [optional] 
 **parent_id** | **str** |  | [optional] 
 **platforms** | **list[str]** |  | [optional] 
+**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  | [optional] 
 **role_ids** | **list[str]** |  | [optional] 
 **send_creation_notification** | **bool** | Send notification to group members. | [optional] [default to False]
 **starts_at** | **datetime** | Time the vent starts at | [optional] 

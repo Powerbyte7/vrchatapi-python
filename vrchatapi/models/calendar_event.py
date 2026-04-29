@@ -53,10 +53,10 @@ class CalendarEvent(object):
         'interested_user_count': 'int',
         'is_draft': 'bool',
         'languages': 'list[str]',
-        'occurrence_kind': 'str',
+        'occurrence_kind': 'CalendarEventOccurrenceKind',
         'owner_id': 'str',
         'platforms': 'list[CalendarEventPlatform]',
-        'recurrence': 'str',
+        'recurrence': 'CalendarEventRecurrence',
         'role_ids': 'list[str]',
         'series_id': 'str',
         'starts_at': 'datetime',
@@ -561,10 +561,9 @@ class CalendarEvent(object):
     def occurrence_kind(self):
         """Gets the occurrence_kind of this CalendarEvent.  # noqa: E501
 
-        So far if it exists, always the string \"single\"  # noqa: E501
 
         :return: The occurrence_kind of this CalendarEvent.  # noqa: E501
-        :rtype: str
+        :rtype: CalendarEventOccurrenceKind
         """
         return self._occurrence_kind
 
@@ -572,10 +571,9 @@ class CalendarEvent(object):
     def occurrence_kind(self, occurrence_kind):
         """Sets the occurrence_kind of this CalendarEvent.
 
-        So far if it exists, always the string \"single\"  # noqa: E501
 
         :param occurrence_kind: The occurrence_kind of this CalendarEvent.  # noqa: E501
-        :type occurrence_kind: str
+        :type occurrence_kind: CalendarEventOccurrenceKind
         """
 
         self._occurrence_kind = occurrence_kind
@@ -626,10 +624,9 @@ class CalendarEvent(object):
     def recurrence(self):
         """Gets the recurrence of this CalendarEvent.  # noqa: E501
 
-        So far unused, always \"null\"  # noqa: E501
 
         :return: The recurrence of this CalendarEvent.  # noqa: E501
-        :rtype: str
+        :rtype: CalendarEventRecurrence
         """
         return self._recurrence
 
@@ -637,10 +634,9 @@ class CalendarEvent(object):
     def recurrence(self, recurrence):
         """Sets the recurrence of this CalendarEvent.
 
-        So far unused, always \"null\"  # noqa: E501
 
         :param recurrence: The recurrence of this CalendarEvent.  # noqa: E501
-        :type recurrence: str
+        :type recurrence: CalendarEventRecurrence
         """
 
         self._recurrence = recurrence

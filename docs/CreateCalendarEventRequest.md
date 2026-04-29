@@ -15,8 +15,10 @@ Name | Type | Description | Notes
 **image_id** | **str** |  | [optional] 
 **is_draft** | **bool** |  | [optional] 
 **languages** | **list[str]** |  | [optional] 
+**occurrence_kind** | [**CalendarEventOccurrenceKind**](CalendarEventOccurrenceKind.md) |  | [optional] 
 **parent_id** | **str** |  | [optional] 
 **platforms** | [**list[CalendarEventPlatform]**](CalendarEventPlatform.md) |  | [optional] 
+**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  | [optional] 
 **role_ids** | **list[str]** |  | [optional] 
 **send_creation_notification** | **bool** | Send notification to group members. | 
 **starts_at** | **datetime** | Time the event starts at | 

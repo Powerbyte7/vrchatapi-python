@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 **interested_user_count** | **int** |  | [optional] 
 **is_draft** | **bool** |  | [optional] 
 **languages** | **list[str]** | Languages that might be spoken at this event | [optional] 
-**occurrence_kind** | **str** | So far if it exists, always the string \&quot;single\&quot; | [optional] 
+**occurrence_kind** | [**CalendarEventOccurrenceKind**](CalendarEventOccurrenceKind.md) |  | [optional] 
 **owner_id** | **str** |  | [optional] 
 **platforms** | [**list[CalendarEventPlatform]**](CalendarEventPlatform.md) |  | [optional] 
-**recurrence** | **str** | So far unused, always \&quot;null\&quot; | [optional] 
+**recurrence** | [**CalendarEventRecurrence**](CalendarEventRecurrence.md) |  | [optional] 
 **role_ids** | **list[str]** | Group roles that may join this event | [optional] 
 **series_id** | **str** | So far unused, always \&quot;null\&quot; | [optional] 
 **starts_at** | **datetime** |  | 

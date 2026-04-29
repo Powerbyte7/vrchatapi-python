@@ -47,8 +47,10 @@ class CreateCalendarEventRequest(object):
         'image_id': 'str',
         'is_draft': 'bool',
         'languages': 'list[str]',
+        'occurrence_kind': 'CalendarEventOccurrenceKind',
         'parent_id': 'str',
         'platforms': 'list[CalendarEventPlatform]',
+        'recurrence': 'CalendarEventRecurrence',
         'role_ids': 'list[str]',
         'send_creation_notification': 'bool',
         'starts_at': 'datetime',
@@ -69,8 +71,10 @@ class CreateCalendarEventRequest(object):
         'image_id': 'imageId',
         'is_draft': 'isDraft',
         'languages': 'languages',
+        'occurrence_kind': 'occurrenceKind',
         'parent_id': 'parentId',
         'platforms': 'platforms',
+        'recurrence': 'recurrence',
         'role_ids': 'roleIds',
         'send_creation_notification': 'sendCreationNotification',
         'starts_at': 'startsAt',
@@ -79,7 +83,7 @@ class CreateCalendarEventRequest(object):
         'uses_instance_overflow': 'usesInstanceOverflow'
     }
 
-    def __init__(self, access_type=None, category=None, close_instance_after_end_minutes=None, description=None, ends_at=None, featured=None, guest_early_join_minutes=None, host_early_join_minutes=None, image_id=None, is_draft=None, languages=None, parent_id=None, platforms=None, role_ids=None, send_creation_notification=None, starts_at=None, tags=None, title=None, uses_instance_overflow=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, access_type=None, category=None, close_instance_after_end_minutes=None, description=None, ends_at=None, featured=None, guest_early_join_minutes=None, host_early_join_minutes=None, image_id=None, is_draft=None, languages=None, occurrence_kind=None, parent_id=None, platforms=None, recurrence=None, role_ids=None, send_creation_notification=None, starts_at=None, tags=None, title=None, uses_instance_overflow=None, local_vars_configuration=None):  # noqa: E501
         """CreateCalendarEventRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -96,8 +100,10 @@ class CreateCalendarEventRequest(object):
         self._image_id = None
         self._is_draft = None
         self._languages = None
+        self._occurrence_kind = None
         self._parent_id = None
         self._platforms = None
+        self._recurrence = None
         self._role_ids = None
         self._send_creation_notification = None
         self._starts_at = None
@@ -124,10 +130,13 @@ class CreateCalendarEventRequest(object):
             self.is_draft = is_draft
         if languages is not None:
             self.languages = languages
+        if occurrence_kind is not None:
+            self.occurrence_kind = occurrence_kind
         if parent_id is not None:
             self.parent_id = parent_id
         if platforms is not None:
             self.platforms = platforms
+        self.recurrence = recurrence
         if role_ids is not None:
             self.role_ids = role_ids
         self.send_creation_notification = send_creation_notification
@@ -389,6 +398,27 @@ class CreateCalendarEventRequest(object):
         self._languages = languages
 
     @property
+    def occurrence_kind(self):
+        """Gets the occurrence_kind of this CreateCalendarEventRequest.  # noqa: E501
+
+
+        :return: The occurrence_kind of this CreateCalendarEventRequest.  # noqa: E501
+        :rtype: CalendarEventOccurrenceKind
+        """
+        return self._occurrence_kind
+
+    @occurrence_kind.setter
+    def occurrence_kind(self, occurrence_kind):
+        """Sets the occurrence_kind of this CreateCalendarEventRequest.
+
+
+        :param occurrence_kind: The occurrence_kind of this CreateCalendarEventRequest.  # noqa: E501
+        :type occurrence_kind: CalendarEventOccurrenceKind
+        """
+
+        self._occurrence_kind = occurrence_kind
+
+    @property
     def parent_id(self):
         """Gets the parent_id of this CreateCalendarEventRequest.  # noqa: E501
 
@@ -429,6 +459,27 @@ class CreateCalendarEventRequest(object):
         """
 
         self._platforms = platforms
+
+    @property
+    def recurrence(self):
+        """Gets the recurrence of this CreateCalendarEventRequest.  # noqa: E501
+
+
+        :return: The recurrence of this CreateCalendarEventRequest.  # noqa: E501
+        :rtype: CalendarEventRecurrence
+        """
+        return self._recurrence
+
+    @recurrence.setter
+    def recurrence(self, recurrence):
+        """Sets the recurrence of this CreateCalendarEventRequest.
+
+
+        :param recurrence: The recurrence of this CreateCalendarEventRequest.  # noqa: E501
+        :type recurrence: CalendarEventRecurrence
+        """
+
+        self._recurrence = recurrence
 
     @property
     def role_ids(self):
